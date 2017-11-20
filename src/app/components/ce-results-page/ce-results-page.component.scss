@@ -1,0 +1,46 @@
+.graphToolBar {
+  background-color: darkslategrey;
+  font-family: roboto;
+  color: white;
+  font-size: 16px;
+  padding-left: 20px;
+  height: 48px;
+  min-height: 48px;
+}
+
+.mode-active {
+  color: #ffff8d;
+}
+
+.toolbar-item {
+  padding-left: 10px;
+  padding-right: 10px;
+}
+
+.side-panel {
+  color: black;
+}
+
+.filter-label {
+  display: inline-block;
+  width: 160px;
+}
+
+.filter-input {
+  display: inline-block;
+  width: 200px;
+}
+
+hr {
+  margin-top: 15px;
+  border: 1px solid white;
+}
+
+.hero-chart-container {
+  overflow: none;
+}
+
+.hero-filter-group {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}

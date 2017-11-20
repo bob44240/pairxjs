@@ -1,0 +1,89 @@
+<div style="height: 100%; width: 100%;">
+    <md-toolbar class="graphToolBar">
+      <div (click)="setDisplayMode(0)" [ngClass]="{'mode-active': modeIndex === 0 }"
+          style="cursor: pointer; height: 100%; display: inline-block;">
+        <div class="toolbar-item" style="display: inline-block; margin-top: 10px;">
+          <img src="/assets/icon-tabular-inactive.svg" height="30px" width="30px"
+              style="vertical-align: middle;" *ngIf="modeIndex !== 0">
+          <img src="/assets/icon-tabular-active.svg" height="30px" width="30px"
+              style="vertical-align: middle;" *ngIf="modeIndex === 0">
+          <div class="graphTypeLabels" style="vertical-align: middle; display: inline-block;">Tabular</div>
+        </div>
+      </div>
+      <div (click)="setDisplayMode(1)" [ngClass]="{'mode-active': modeIndex === 1 }"
+          style="cursor: pointer; height: 100%; display: inline-block;">
+        <div class="toolbar-item" style="display: inline-block; margin-top: 10px;">
+          <img src="/assets/icon-line-inactive.svg" height="30px" width="30px"
+              style="vertical-align: middle;" *ngIf="modeIndex !== 1">
+          <img src="/assets/icon-line-active.svg" height="30px" width="30px"
+              style="vertical-align: middle;" *ngIf="modeIndex === 1">
+          <div class="graphTypeLabels" style="vertical-align: middle; display: inline-block;">Line</div>
+        </div>
+      </div>
+      <div (click)="setDisplayMode(2)" [ngClass]="{'mode-active': modeIndex === 2 }"
+          style="cursor: pointer; height: 100%; display: inline-block;">
+        <div class="toolbar-item" style="display: inline-block; margin-top: 10px;">
+          <img src="/assets/icon-stackedarea-inactive.svg" height="30px" width="30px"
+              style="vertical-align: middle;" *ngIf="modeIndex !== 2">
+          <img src="/assets/icon-stackedarea-active.svg" height="30px" width="30px"
+              style="vertical-align: middle;" *ngIf="modeIndex === 2">
+          <div class="graphTypeLabels" style="vertical-align: middle; display: inline-block;">Area</div>
+        </div>
+      </div>
+    </md-toolbar>
+    <div #chartGrandparent style="height: 100%;">
+      <app-results-sidebar #sidebar (onOpen)="onSidebarToggle()"
+                                    (onOpenFinish)="this.draw(0,0)"
+                                    style="height: 100%;">
+        <div main-panel style="height: 100%; width: 100%">
+          <div class="flex-col-container" style="height: 100%; width: 100%;">
+            <div class="flex-item-fixed" style="padding-left: 20px; width: 100%;
+                                                height: 60px;">
+              <span style="float: left;">
+                <h3>Trace for {{ seriesFilter }}</h3>
+              </span>
+              <span *ngIf="!this.sidebar.open" (click)="openSidenav()"
+                    style="float: right; cursor:pointer;">
+                <label style="margin-bottom: 15px;">Show Options</label>
+                <img src="/assets/icon-settings-graph.svg" height="30px" width="30px">
+              </span>
+            </div>
+            <div class="flex-item-grow" style="width: 100%;">
+              <div #chartParent (window:resize)="onResize()"
+                                style="height: 100%; width: 100%"
+                                class="hero-chart-container">
+                <ag-grid-angular style="width: 100%; height: 500px;"
+                                 class="ag-theme-material"
+                                 #tableGrid *ngIf="modeIndex===0"
+                                 [gridOptions]='gridOptions'
+                                 [suppressContextMenu]="true">
+                </ag-grid-angular>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div side-panel class="side-panel" style="height: 100%; width: 100%">
+          <div style="width: 100%">
+            <h4>Filters</h4>
+            <div class="hero-filter-group">
+              <div class="filter-label">
+                <label>Strategy:</label>
+              </div>
+              <div class="filter-input">
+                <md-select [(ngModel)]="seriesFilter" (change)="draw(1000, 500)"
+                          style="width: 100%;">
+                  <md-option *ngFor="let strategy of this.strategies; let i = index;"
+                            [value]="strategy">{{strategy}}</md-option>
+                </md-select>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+              <h4>User Override Values</h4>
+              <app-bc-override-values></app-bc-override-values>
+          </div>
+        </div>
+      </app-results-sidebar>
+    </div>
+</div>

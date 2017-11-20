@@ -1,0 +1,13 @@
+<md-card-title>Confirm Table Delete</md-card-title>
+
+<md-card-content>
+  <h3>{{Title}}</h3>
+  <p>
+    Click Yes to Confirm
+  </p>
+</md-card-content>
+
+<div class="modal-control">
+  <button md-button color="accent" (click)="dialogRef.close({data: 'Yes'})">Yes</button>
+  <button md-button (click)="dialogRef.close({data: 'Cancel'})">Cancel</button>
+</div>

@@ -1,0 +1,32 @@
+<div class="formula-bar-outer mat-elevation-z3" (clickOutside)="submit()">
+    <div class="formula-bar-inner">
+        <div class="formula-bar-container">
+            <div class="formula-symbol"><img src="../../assets/fx.svg" height="20px" width="auto" (click)="showDoc('base','mean')"></div>
+            <div #formulaBarElement class="formula-bar"></div>
+            <div class="formula-clear">
+                <a (click)="cancel()"><img src="../../assets/cancel.svg" height="22px" width="auto"></a>
+            </div>
+            <div class="formula-done">
+                <a (click)="submit()"><img src="../../assets/check.svg" height="22px" width="auto"></a>
+            </div>
+        </div>
+        <div *ngIf="matches_to_show.length > 0" class="dropdown-content"
+                (clickOutside)="clearSuggestions()">
+            <div *ngFor="let match of matches_to_show; let i = index" (click)="wordComplete(match)" [ngClass]="i == active ? 'suggest-container-active' : 'suggest-container'">
+                <div class="suggest-icon"><img [src]="match.fun ? '../../assets/f.svg' : '../../assets/x.svg'" height="18px" width="18px"></div>
+                <div class="suggest-name">{{match.name}}</div>
+                <div class="suggest-desc">{{match.desc}}</div>
+                <div class="suggest-usage">{{match.usage}}</div>
+                <div *ngIf="match.pkg" class="suggest-package">{{ '{' + match.pkg + '}'}}</div>
+                <div class="help-icon" *ngIf="match.fun">
+                    <a (click)="showDoc(match.pkg, match.name)">
+                        <img src="../../assets/help.svg" height="18px" width="18px">
+                    </a>
+                </div>
+            </div>
+        </div>
+        <div [innerHTML]='docHTML' *ngIf="docHTML !== ''"
+            class="help-dropdown" (clickOutside)="clearSuggestions()">
+        </div>
+    </div>
+</div>

@@ -1,0 +1,21 @@
+<img *ngIf='!doedit' src="/assets/row-add.svg" alt="add a new row" style="cursor:pointer;margin:0px 4px 15px 0px;" (click)="addrow()" title="add a row at the end of the group..." height="22px" width="auto">
+<span *ngIf='!doedit' title="cllick to edit group name and label..." class="datatype datatype-pill datatype-value-primary" (click)=edittext()>
+    {{group}}
+  </span>
+<span *ngIf='!doedit' title="cllick to edit group name and label..." class="heRo-ag-grid-values-group-label" (click)=edittext()>
+    {{label}}
+  </span>
+<img *ngIf='doedit' src="/assets/save-edit.svg" alt="save text edits" style="cursor:pointer;margin:0px 0px 24px 0px;" (click)="saveedit()" title="save the text edits..." height="28px" width="auto">
+<img *ngIf='doedit' src="/assets/cancel-edit.svg" alt="cancel text edit" style="cursor:pointer;margin:0px 10px 24px 4px;" (click)="canceledit()" title="cancel the edit operation..." height="28px" width="auto">
+<md-input-container *ngIf='doedit' class="heRo-input" style="color:#c0504d;
+                             font-weight:bold;
+                             width:200px !important;
+                             vertical-align:super;">
+	<input mdInput required type="text" placeholder=" group name" [(ngModel)]="nameedit" (blur)="nameChange($event)">
+</md-input-container>
+<md-input-container *ngIf='doedit' class="heRo-input" style="color:#c0504d;
+                             font-weight:bold;
+                             width:400px !important;
+                             vertical-align:super;">
+	<input mdInput required type="text" placeholder=" group label" [(ngModel)]="labeledit" (blur)="labelChange($event)">
+</md-input-container>

@@ -1,0 +1,16 @@
+<md-card style="height: 300px; width:300px">
+  <md-card-header>
+    <md-card-title style="font-weight: bold; font-size: 18px">{{title}}</md-card-title>
+    <md-card-subtitle style="margin-top: 20px">{{subtitle}}</md-card-subtitle>
+  </md-card-header>
+
+  <md-card-content>
+    {{content}}
+  </md-card-content>
+
+  <md-card-footer>
+    <button (click)="closeDialog()" style="margin-left:20px; margin-bottom: 30px;">Dismiss</button>
+    <!--<button (click)="closeDialog()">{{OKButton}}</button>-->
+    <!--<button (click)="cancelDialog()">Cancel</button>-->
+  </md-card-footer>
+</md-card>

@@ -1,0 +1,64 @@
+@import '~styles/global';
+
+* {
+  transition: color .125s ease-in-out;
+}
+
+img {
+  -moz-transition: all .3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+img:hover {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+md-icon {
+  padding: 0 8px;
+}
+
+.toolbar {
+  width: 100%;
+  background-color: mat-color($md-primary, 300);
+  padding: 8px 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  height: 36px;
+  
+  hr {
+    height: 100%;
+    width: 1px;
+    border-right: 1px solid rgba(255, 255, 255, .7);
+    margin: 0 16px 0 0;
+  }
+}
+
+.toolbar-button {
+  cursor: pointer;
+  //height: 24px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  color: #fff;
+  padding-right: 16px;
+
+  md-icon {
+    display: flex;
+    align-items: center;
+    width: 24px;
+    padding: 0;
+  }
+
+  p {
+    margin-left: 8px;
+  }
+
+  &:hover {
+    color: mat-color($md-warn, 500);
+  }
+}

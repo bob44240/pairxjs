@@ -1,0 +1,50 @@
+<div class="model-editor-tab mat-elevation-z6">
+	<span>
+    Decision
+  </span>
+</div>
+<div class='heRo-card-container'>
+	<div style="margin:25px 0px 0px 45px;">
+		<md-radio-group (change)="modelChange()" name="choose-moi" [(ngModel)]="radiodecision">
+			<div class="heRo-col-7 heRo-mobile-col-24">
+				<md-radio-button value="how">
+					<img src="/assets/decision-how.svg" alt="Who" style="margin:0px 0px 15px 15px;" title="decision... how!" height="40px" width="auto">
+				</md-radio-button>
+				<div style="display:inline-block;width:180px">
+					<p style="font-size:125%;margin:0px 0px 0px 20px;">
+						How
+					</p>
+					<p style="font-size:90%;margin:0px 0px 0px 20px;">
+						Compare the use of different interventions in a given group.
+					</p>
+				</div>
+			</div>
+			<div class="heRo-col-7 heRo-mobile-col-24">
+				<md-radio-button value="who">
+					<img src="/assets/decision-who.svg" alt="Who" style="margin:0px 0px 10px 15px;" title="decision... who!" height="40px" width="auto">
+				</md-radio-button>
+				<div style="display:inline-block;width:180px;">
+					<p style="font-size:125%;margin:0px 0px 0px 20px;">
+						Who
+					</p>
+					<p style="font-size:90%;margin:0px 0px 0px 20px;">
+						Compare the use of a given intervention in different groups.
+					</p>
+				</div>
+			</div>
+			<div class="heRo-col-7 heRo-mobile-col-24">
+				<md-radio-button value="both">
+					<img src="/assets/decision-both.svg" alt="Who" style="margin:0px 0px 20px 15px;" title="decision... both!" height="40px" width="auto">
+				</md-radio-button>
+				<div style="display:inline-block;width:180px">
+					<p style="font-size:125%;margin:0px 0px 0px 20px;">
+						Both
+					</p>
+					<p style="font-size:90%;margin:0px 0px 0px 20px;">
+						Compare the use of different interventions in different groups.
+					</p>
+				</div>
+			</div>
+		</md-radio-group>
+	</div>
+</div>

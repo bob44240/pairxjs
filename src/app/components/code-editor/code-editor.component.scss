@@ -1,0 +1,154 @@
+@import '~styles/global.scss';
+
+* {
+  transition: color .125 ease-in-out, background-color .125 ease-in-out;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+}
+
+.page {
+  background-color: #fff;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  height: calc(100vh - 80px);
+}
+
+.page-container {
+  //margin-top: 24px;
+  max-height: 100%;
+  display: flex;
+  flex-direction: row;
+}
+
+.selection-container {
+  flex-basis: 20%;
+  flex-shrink: 1;
+}
+
+.add-new-container {
+  display: flex;
+  align-items: center;
+  padding: 0 8px;
+  margin-bottom: 16px;
+  border-bottom: 1px solid mat-color($md-primary, 200);
+  height: 64px;
+}
+
+.button-add-new {
+  background-color: inherit;
+  border: 0;
+  font-size: 12px;
+  text-transform: uppercase;
+  font-weight: 500;
+}
+
+.actions {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+}
+
+.table-row {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  height: 48px;
+  padding: 0 0 0 24px;
+
+  &:hover {
+    //background-color: rgba(0, 0, 0, .05);
+  }
+}
+
+.toolbar-button {
+  cursor: pointer;
+  //height: 24px;
+  font-size: 13px;
+  display: flex;
+  align-items: center;
+  color: mat-color($md-primary, 300);
+  padding-right: 16px;
+
+  md-icon {
+    display: flex;
+    align-items: center;
+    width: 24px;
+    padding: 0;
+  }
+
+  p {
+    margin-left: 8px;
+  }
+
+  &:hover {
+    color: mat-color($md-accent, 500);
+  }
+}
+
+.file-active {
+  background-color: mat-color($md-primary, 500);
+
+  a {
+    color: #fff;
+  }
+
+  .filename {
+    color: #fff;
+  }
+}
+
+.filename {
+  cursor: pointer;
+}
+
+.code-container {
+  height: calc(100vh - 144px);
+  overflow: scroll;
+  width: 100%;
+  z-index: 1;
+  flex-basis: 80%;
+  flex-shrink: 2;
+  flex-wrap: nowrap;
+  flex-direction: row;
+  display: flex;
+  justify-content: space-between;
+
+  > div {
+    width: 50%;
+  }
+}
+
+.code-editor {
+  z-index: 2;
+  position: relative;
+  
+  > div {
+    height: 100%;
+  }
+}
+
+.code-preview {
+  z-index: 1;
+  position: relative;
+  padding: 1em;
+  
+  span {
+    font-size: 18px;
+    position: absolute;
+    right: 1em;
+  }
+  
+  iframe {
+    width: 100%;
+    height: 100%;
+  }
+}
+
+.muted {
+  opacity: .2;
+}

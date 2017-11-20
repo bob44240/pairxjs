@@ -1,0 +1,68 @@
+<app-sbmessage-receiver></app-sbmessage-receiver>
+<div class="flex-col-container" style="height: 100vh; width: 100%; overflow: hidden; max-height: 100vh;">
+  <!-- Menu Bar   -->
+  <div class="flex-item-fixed" style="width: 100%; height: 64px;">
+    <app-tool-bar></app-tool-bar>
+  </div>
+  <!-- Model View   -->
+  <div class="flex-item-grow flex-row-container model-view-container my-8" style="width: 100%;">
+    <!-- Sidenav  -->
+    <div class="flex-item-fixed">
+      <app-wizard-sidenav (selection)="openTab($event)" [active]="selectedTab" style="width: 100%; height: 100%;">
+      </app-wizard-sidenav>
+    </div>
+    <!-- Sidenav Tab Content   -->
+    <div class="flex-item-grow" style="height: 100%; min-width: 0px !important;">
+      <md-tab-group id="side-nav-tab" class="mx-8" [(selectedIndex)]="selectedTab" style="height: 100%;">
+        <!-- Model Editor Page   -->
+        <md-tab label="Model Editor">
+          <app-model-page [active]="selectedTab === 0"></app-model-page>
+        </md-tab>
+        <!-- Variables Page   -->
+        <md-tab label="Variables">
+          <app-variables-page [active]="selectedTab === 1">
+          </app-variables-page>
+        </md-tab>
+        <!-- Tables Page   -->
+        <md-tab label="Tables">
+          <app-handstable *ngIf="selectedTab===2" [active]="selectedTab===2"></app-handstable>
+        </md-tab>
+        <!-- Code Page   -->
+        <md-tab label="Code">
+          <app-code-editor [active]="selectedTab===3"></app-code-editor>
+        </md-tab>
+        <!-- DSA Inputs Page   -->
+        <md-tab label="DSA Inputs">
+          <h1>Hi</h1>
+        </md-tab>
+        <!-- PSA Inputs Page   -->
+        <md-tab label="PSA Inputs">
+          <h1>Hi</h1>
+        </md-tab>
+        <!-- BC Results Page   -->
+        <md-tab label="Base Case Results">
+          <app-bc-results-page [active]="selectedTab==6"></app-bc-results-page>
+        </md-tab>
+        <!-- DSA Results Page   -->
+        <md-tab label="DSA Results">
+          <h1>Hi</h1>
+        </md-tab>
+        <!-- PSA Results Page   -->
+        <md-tab label="PSA Results">
+          <h1>Hi</h1>
+        </md-tab>
+        <!-- Import/Export Page   -->
+        <md-tab label="Import/Export">
+          <h1>Hi</h1>
+        </md-tab>
+        <!-- Settings Page   -->
+        <md-tab label="Settings">
+          <app-model-settings [active]="selectedTab === 10">
+          </app-model-settings>
+        </md-tab>
+      </md-tab-group>
+    </div>
+
+  </div>
+</div>
+`

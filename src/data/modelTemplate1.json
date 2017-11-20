@@ -1,0 +1,2386 @@
+{
+  "statestatus": {
+    "isDirty": false
+  },
+  "modelheader": {
+    "filename": "modelTemplate1.json",
+    "author": "Jordan Amdahl",
+    "description": "This is Jordan's new model template.",
+    "creatDate": "11/30/2017",
+    "updateDate": "11/30/2017"
+  },
+  "decision": {
+    "ModelType": "how"
+  },
+  "settings": {
+    "Country": "United States",
+    "Language": "english",
+    "DiscountRateOutcomes": 3,
+    "DiscountRateCosts": 3,
+    "ModelTimeframe": 20,
+    "ModelTimeframeUnits": "years",
+    "CycleLength": 1,
+    "CycleLengthUnits": "years",
+    "CycleCount": 20
+  },
+  "groupinfo": {
+    "PopulationType": "heterogeneous"
+  },
+  "groups": [
+    {
+      "id": "1",
+      "on_off": "On",
+      "name": "M_L35",
+      "label": "Men, age 0-35",
+      "start_age": 27,
+      "weight_kg": 83,
+      "wt": 0.2
+    },
+    {
+      "id": "2",
+      "on_off": "On",
+      "name": "M_GE35",
+      "label": "Men, age 0-35+",
+      "start_age": 42,
+      "weight_kg": 81,
+      "wt": 0.25
+    },
+    {
+      "id": "3",
+      "on_off": "Off",
+      "name": "W_L35",
+      "label": "Women, age 0-35",
+      "start_age": 30,
+      "weight_kg": 72,
+      "wt": 0.3
+    },
+    {
+      "id": "4",
+      "on_off": "On",
+      "name": "W_GE35",
+      "label": "Women, age 0-35+",
+      "start_age": 44,
+      "weight_kg": 70,
+      "wt": 0.25
+    }
+  ],
+  "strategieswho": [
+    {
+      "id": "1",
+      "on_off": "On",
+      "name": "STRAT1",
+      "label": "Strategy 1 Description",
+      "groups": "G_M40-44Y"
+    },
+    {
+      "id": "2",
+      "on_off": "On",
+      "name": "STRAT2",
+      "label": "Strategy 2 Description",
+      "groups": "G_M40-44Y, G_W40-44Y"
+    },
+    {
+      "id": "3",
+      "on_off": "On",
+      "name": "STRAT3",
+      "label": "Strategy 3 Description",
+      "groups": "G_W40-44Y, G_W45-44Y"
+    },
+    {
+      "id": "4",
+      "on_off": "On",
+      "name": "STRAT4",
+      "label": "Strategy 4 Description",
+      "groups": "G_M40-44Y, G_M45-44Y, G_W45-44Y, G_W45-49Y"
+    }
+  ],
+  "strategieshow": [
+    {
+      "id": "1",
+      "on_off": "On",
+      "name": "immun",
+      "label": "Immunotherapy"
+    },
+    {
+      "id": "2",
+      "on_off": "On",
+      "name": "target",
+      "label": "Targeted therapy"
+    },
+    {
+      "id": "3",
+      "on_off": "On",
+      "name": "chemo",
+      "label": "Chemotherapy"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "1",
+      "strategy": "All",
+      "from": "rf",
+      "to": "rel",
+      "formula": "rfs_prob"
+    },
+    {
+      "id": "2",
+      "strategy": "All",
+      "from": "rf",
+      "to": "dead",
+      "formula": "rfs_mort"
+    },
+    {
+      "id": "3",
+      "strategy": "All",
+      "from": "rf",
+      "to": "rf",
+      "formula": "C"
+    },
+    {
+      "id": "4",
+      "strategy": "All",
+      "from": "rel",
+      "to": "dead",
+      "formula": "rel_mort"
+    },
+    {
+      "id": "5",
+      "strategy": "All",
+      "from": "rel",
+      "to": "rel",
+      "formula": "C"
+    },
+    {
+      "id": "6",
+      "strategy": "All",
+      "from": "dead",
+      "to": "dead",
+      "formula": "1"
+    }
+  ],
+  "states": [
+    {
+      "id": "1",
+      "name": "rf",
+      "label": "Relapse-free",
+      "initial_probability": "1",
+      "limit": 5
+    },
+    {
+      "id": "2",
+      "name": "rel",
+      "label": "Post-relapse",
+      "initial_probability": "0",
+      "limit": 5
+    },
+    {
+      "id": "3",
+      "name": "dead",
+      "label": "Dead",
+      "initial_probability": "0",
+      "limit": 1
+    }
+  ],
+  "formulas": [
+    {
+      "id": "1",
+      "name": "start_age",
+      "description": "Age at start of model",
+      "category": "Demographic",
+      "on_off": "On",
+      "formula": "45"
+    },
+    {
+      "id": "2",
+      "name": "current_age",
+      "description": "Current age",
+      "category": "Demographic",
+      "on_off": "On",
+      "formula": "start_age + model_year"
+    },
+    {
+      "id": "3",
+      "name": "percent_male",
+      "description": "Percent male",
+      "category": "Demographic",
+      "on_off": "Off",
+      "formula": "0.48"
+    },
+    {
+      "id": "4",
+      "name": "gp_mort_male",
+      "description": "Annualized general-population death rate, men",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "look_up(data = gp_mort, age = current_age, sex = \"male\", value = \"prob_death\", bin = T)"
+    },
+    {
+      "id": "5",
+      "name": "gp_mort_female",
+      "description": "Annualized general-population death rate, women",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "look_up(data = gp_mort, age = current_age, sex = \"female\", value = \"prob_death\", bin = T)"
+    },
+    {
+      "id": "6",
+      "name": "gp_mort",
+      "description": "Annualized general-population death rate",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "gp_mort_male * percent_male + gp_mort_female * (1 -percent_male)"
+    },
+    {
+      "id": "7",
+      "name": "gp_mort_per_cycle",
+      "description": "Per-cycle general-population death rate",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "rescale_prob(gp_mort, to = cycle_length_years, from = 1)"
+    },
+    {
+      "id": "8",
+      "name": "rfs_p1",
+      "description": "Relapse-free survival shape parameter, chemotherapy",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "1.12"
+    },
+    {
+      "id": "9",
+      "name": "rfs_p2",
+      "description": "Relapse-free survival scale parameter, chemotherapy",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "32.14"
+    },
+    {
+      "id": "10",
+      "name": "target_hr",
+      "description": "Hazard ratio of relapse, targeted therapy vs. chemotherapy",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "0.65"
+    },
+    {
+      "id": "11",
+      "name": "immun_hr",
+      "description": "Hazard ratio of relapse, immunotherapy vs. chemotherapy",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "0.38"
+    },
+    {
+      "id": "12",
+      "name": "rfs_hr",
+      "description": "Hazard ratio of relapse",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "dispatch_strategy(chemo=1, target=target_hr, immun=immun_hr)"
+    },
+    {
+      "id": "13",
+      "name": "rfs_prob",
+      "description": "Probability of relapse",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "define_survival(\"weibull\", shape = rfs_p1, scale = rfs_p2) %>% apply_hr(rfs_hr) %>% compute_surv(state_time, cycle_length_months)"
+    },
+    {
+      "id": "14",
+      "name": "rf_smr",
+      "description": "Standardized mortality ratio, relapse-free",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "2.5"
+    },
+    {
+      "id": "15",
+      "name": "rfs_mort",
+      "description": "Probability of death, relapse-free",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "gp_mort_per_cycle * rf_smr"
+    },
+    {
+      "id": "16",
+      "name": "prs_p1",
+      "description": "Post-relapse survival shape parameter",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "1.37"
+    },
+    {
+      "id": "17",
+      "name": "prs_p2",
+      "description": "Post-relapse survival scale parameter",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "51.85"
+    },
+    {
+      "id": "18",
+      "name": "rel_mort",
+      "description": "Probability of death, post-relapse",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "define_survival(\"weibull\", shape = prs_p1, scale = prs_p2) %>% compute_surv(state_time, cycle_length_months) %>% combine_probs(gp_mort_per_cycle)"
+    },
+    {
+      "id": "19",
+      "name": "p_febn_chemo",
+      "description": "Probability of febrile neutropenia per cycle, chemotherapy",
+      "category": "Safety",
+      "on_off": "On",
+      "formula": "0.015"
+    },
+    {
+      "id": "20",
+      "name": "rr_febn_target",
+      "description": "Relative risk of febrile neutropenia, targeted therapy vs. chemotherapy",
+      "category": "Safety",
+      "on_off": "On",
+      "formula": "0.67"
+    },
+    {
+      "id": "21",
+      "name": "rr_febn_immun",
+      "description": "Relative risk of febrile neutropenia, immunotherapy vs. chemotherapy",
+      "category": "Safety",
+      "on_off": "On",
+      "formula": "0.43"
+    },
+    {
+      "id": "22",
+      "name": "p_febn",
+      "description": "Probability of febrile neutropenia per cycle",
+      "category": "Safety",
+      "on_off": "On",
+      "formula": "dispatch_strategy(chemo=1, target=rr_febn_target, immun=rr_febn_immun) * p_febn_chemo"
+    },
+    {
+      "id": "23",
+      "name": "dur_febn",
+      "description": "Mean duration of febrile neutropenia",
+      "category": "Safety",
+      "on_off": "On",
+      "formula": "16/365"
+    },
+    {
+      "id": "24",
+      "name": "util_rf",
+      "description": "Utility value, relapse-free",
+      "category": "QoL",
+      "on_off": "On",
+      "formula": "0.82"
+    },
+    {
+      "id": "25",
+      "name": "util_rel",
+      "description": "Utility value, post-relapse",
+      "category": "QoL",
+      "on_off": "On",
+      "formula": "0.55"
+    },
+    {
+      "id": "26",
+      "name": "util_febn",
+      "description": "Utility value, febrile neutropenia",
+      "category": "QoL",
+      "on_off": "On",
+      "formula": "0.59"
+    },
+    {
+      "id": "27",
+      "name": "disutil_febn",
+      "description": "Disutility, febrile neutropenia",
+      "category": "QoL",
+      "on_off": "On",
+      "formula": "util_febn - util_rf"
+    },
+    {
+      "id": "28",
+      "name": "dose_chemo",
+      "description": "Mean dose, chemotherapy",
+      "category": "Utilization",
+      "on_off": "On",
+      "formula": "400"
+    },
+    {
+      "id": "29",
+      "name": "dose_target",
+      "description": "Mean dose, targeted therapy",
+      "category": "Utilization",
+      "on_off": "On",
+      "formula": "800"
+    },
+    {
+      "id": "30",
+      "name": "dose_immun",
+      "description": "Mean dose, immunotherapy",
+      "category": "Utilization",
+      "on_off": "On",
+      "formula": "30"
+    },
+    {
+      "id": "31",
+      "name": "freq_chemo",
+      "description": "Number of doses per cycle, chemotherapy",
+      "category": "Utilization",
+      "on_off": "On",
+      "formula": "cycle_length_months * 3"
+    },
+    {
+      "id": "32",
+      "name": "freq_target",
+      "description": "Number of doses per cycle, targeted therapy",
+      "category": "Utilization",
+      "on_off": "On",
+      "formula": "cycle_length_months * 28"
+    },
+    {
+      "id": "33",
+      "name": "freq_immun",
+      "description": "Number of doses per cycle, immunotherapy",
+      "category": "Utilization",
+      "on_off": "On",
+      "formula": "cycle_length_months * 28"
+    },
+    {
+      "id": "34",
+      "name": "ucost_chemo",
+      "description": "Unit cost, chemotherapy",
+      "category": "Cost",
+      "on_off": "On",
+      "formula": "20"
+    },
+    {
+      "id": "35",
+      "name": "ucost_target",
+      "description": "Unit cost, targeted therapy",
+      "category": "Cost",
+      "on_off": "On",
+      "formula": "40"
+    },
+    {
+      "id": "36",
+      "name": "ucost_immun",
+      "description": "Unit cost, immunotherapy",
+      "category": "Cost",
+      "on_off": "On",
+      "formula": "1000"
+    },
+    {
+      "id": "37",
+      "name": "ucost_febn",
+      "description": "Cost per event, febrile neutropenia",
+      "category": "Cost",
+      "on_off": "On",
+      "formula": "3000"
+    },
+    {
+      "id": "38",
+      "name": "ucost_rf",
+      "description": "Cost per month, relapse-free",
+      "category": "Cost",
+      "on_off": "On",
+      "formula": "3000"
+    },
+    {
+      "id": "39",
+      "name": "ucost_rel",
+      "description": "Cost per month, post-relapse",
+      "category": "Cost",
+      "on_off": "On",
+      "formula": "8000"
+    }
+  ],
+  "values_health": [
+    {
+      "id": "1",
+      "name": "febn",
+      "label": "Cases of febrile neutropenia",
+      "strategy": "All",
+      "state": "rf",
+      "formula": "p_febn"
+    },
+    {
+      "id": "2",
+      "name": "lys_rf",
+      "label": "Relapse-free life years",
+      "strategy": "All",
+      "state": "rf",
+      "formula": "cycle_length_years"
+    },
+    {
+      "id": "3",
+      "name": "lys_rel",
+      "label": "Post-relapse life years",
+      "strategy": "All",
+      "state": "rf",
+      "formula": "cycle_length_years"
+    },
+    {
+      "id": "4",
+      "name": "qalys_rf",
+      "label": "Relapse-free QALYs",
+      "strategy": "All",
+      "state": "rf",
+      "formula": "lys_rf * util_rf"
+    },
+    {
+      "id": "5",
+      "name": "qalys_rel",
+      "label": "Post-relapse QALYs",
+      "strategy": "All",
+      "state": "rel",
+      "formula": "lys_rel* util_rel"
+    },
+    {
+      "id": "6",
+      "name": "qalys_febn",
+      "label": "Febrile neutropenia QALYs",
+      "strategy": "All",
+      "state": "rf",
+      "formula": "febn * disutil_febn * dur_febn"
+    }
+  ],
+  "values_economic": [
+    {
+      "id": "1",
+      "name": "cost_med",
+      "label": "Cost of medication",
+      "strategy": "chemo",
+      "state": "rf",
+      "formula": "dose_chemo * freq_chemo * ucost_chemo"
+    },
+    {
+      "id": "2",
+      "name": "cost_med",
+      "label": "Cost of medication",
+      "strategy": "target",
+      "state": "rf",
+      "formula": "dose_target * freq_target* ucost_target"
+    },
+    {
+      "id": "3",
+      "name": "cost_med",
+      "label": "Cost of medication",
+      "strategy": "immun",
+      "state": "rf",
+      "formula": "dose_immun * freq_immun * ucost_immun"
+    },
+    {
+      "id": "4",
+      "name": "cost_febn",
+      "label": "Cost of febrile neutropenia",
+      "strategy": "All",
+      "state": "rf",
+      "formula": "ucost_febn * p_febn"
+    },
+    {
+      "id": "5",
+      "name": "cost_rf",
+      "label": "Routine care, relapse-free",
+      "strategy": "All",
+      "state": "rf",
+      "formula": "ucost_rf * cycle_length_months"
+    },
+    {
+      "id": "6",
+      "name": "cost_rel",
+      "label": "Routine care, post-relapse",
+      "strategy": "All",
+      "state": "rel",
+      "formula": "ucost_rel * cycle_length_months"
+    }
+  ],
+  "summaries_health": [
+    {
+      "id": "1",
+      "on_off": "On",
+      "outcome": "lys",
+      "label1": "Life Years",
+      "wpt": "$100,000",
+      "value": "lys_rf",
+      "label2": "Relapse-Free Life Years"
+    },
+    {
+      "id": "2",
+      "on_off": "On",
+      "outcome": "lys",
+      "label1": "Life Years",
+      "wpt": "$100,000",
+      "value": "lys_rel",
+      "label2": "Post-Relapse Life Years"
+    },
+    {
+      "id": "3",
+      "on_off": "On",
+      "outcome": "qalys",
+      "label1": "QALYs",
+      "wpt": "$150,000",
+      "value": "qalys_rf",
+      "label2": "Relapse-Free QALYs"
+    },
+    {
+      "id": "4",
+      "on_off": "On",
+      "outcome": "qalys",
+      "label1": "QALYs",
+      "wpt": "$150,000",
+      "value": "qalys_rel",
+      "label2": "Post-Relapse QALYs"
+    },
+    {
+      "id": "5",
+      "on_off": "On",
+      "outcome": "qalys",
+      "label1": "QALYs",
+      "wpt": "$150,000",
+      "value": "qalys_febn",
+      "label2": "Febrile Neutropenia QALYs"
+    }
+  ],
+  "summaries_economic": [
+    {
+      "id": "1",
+      "on_off": "On",
+      "outcome": "costs_hc",
+      "label1": "Cost (HC)",
+      "value": "cost_med",
+      "label2": "Cost of Medication"
+    },
+    {
+      "id": "2",
+      "on_off": "On",
+      "outcome": "costs_hc",
+      "label1": "Cost (HC)",
+      "value": "cost_febn",
+      "label2": "Cost of Febrile Neutropenia"
+    },
+    {
+      "id": "3",
+      "on_off": "On",
+      "outcome": "costs_hc",
+      "label1": "Cost (HC)",
+      "value": "cost_rf",
+      "label2": "Cost of Terminal Care"
+    },
+    {
+      "id": "4",
+      "on_off": "On",
+      "outcome": "costs_hc",
+      "label1": "Cost (HC)",
+      "value": "cost_rel",
+      "label2": "Cost of Terminal Care"
+    }
+  ],
+  "tables": [
+    {
+      "id": "1",
+      "name": "gp_mort",
+      "data": [
+        [
+          "age",
+          "sex",
+          "prob_death",
+          "n_alive",
+          "life_expectancy"
+        ],
+        [
+          0,
+          "male",
+          0.006322,
+          100000,
+          76.33
+        ],
+        [
+          1,
+          "male",
+          0.000396,
+          99368,
+          75.81
+        ],
+        [
+          2,
+          "male",
+          0.000282,
+          99328,
+          74.84
+        ],
+        [
+          3,
+          "male",
+          0.000212,
+          99300,
+          73.86
+        ],
+        [
+          4,
+          "male",
+          0.000186,
+          99279,
+          72.88
+        ],
+        [
+          5,
+          "male",
+          0.000162,
+          99261,
+          71.89
+        ],
+        [
+          6,
+          "male",
+          0.000144,
+          99245,
+          70.9
+        ],
+        [
+          7,
+          "male",
+          0.000129,
+          99231,
+          69.91
+        ],
+        [
+          8,
+          "male",
+          0.000114,
+          99218,
+          68.92
+        ],
+        [
+          9,
+          "male",
+          0.0001,
+          99206,
+          67.93
+        ],
+        [
+          10,
+          "male",
+          0.000093,
+          99197,
+          66.94
+        ],
+        [
+          11,
+          "male",
+          0.000101,
+          99187,
+          65.94
+        ],
+        [
+          12,
+          "male",
+          0.000136,
+          99177,
+          64.95
+        ],
+        [
+          13,
+          "male",
+          0.000205,
+          99164,
+          63.96
+        ],
+        [
+          14,
+          "male",
+          0.000299,
+          99144,
+          62.97
+        ],
+        [
+          15,
+          "male",
+          0.000401,
+          99114,
+          61.99
+        ],
+        [
+          16,
+          "male",
+          0.000505,
+          99074,
+          61.02
+        ],
+        [
+          17,
+          "male",
+          0.00062,
+          99024,
+          60.05
+        ],
+        [
+          18,
+          "male",
+          0.000747,
+          98963,
+          59.08
+        ],
+        [
+          19,
+          "male",
+          0.000879,
+          98889,
+          58.13
+        ],
+        [
+          20,
+          "male",
+          0.001019,
+          98802,
+          57.18
+        ],
+        [
+          21,
+          "male",
+          0.001151,
+          98701,
+          56.24
+        ],
+        [
+          22,
+          "male",
+          0.001252,
+          98588,
+          55.3
+        ],
+        [
+          23,
+          "male",
+          0.001309,
+          98464,
+          54.37
+        ],
+        [
+          24,
+          "male",
+          0.001335,
+          98335,
+          53.44
+        ],
+        [
+          25,
+          "male",
+          0.001349,
+          98204,
+          52.51
+        ],
+        [
+          26,
+          "male",
+          0.001369,
+          98072,
+          51.58
+        ],
+        [
+          27,
+          "male",
+          0.001391,
+          97937,
+          50.65
+        ],
+        [
+          28,
+          "male",
+          0.001422,
+          97801,
+          49.72
+        ],
+        [
+          29,
+          "male",
+          0.001459,
+          97662,
+          48.79
+        ],
+        [
+          30,
+          "male",
+          0.001498,
+          97520,
+          47.86
+        ],
+        [
+          31,
+          "male",
+          0.001536,
+          97373,
+          46.93
+        ],
+        [
+          32,
+          "male",
+          0.001576,
+          97224,
+          46
+        ],
+        [
+          33,
+          "male",
+          0.001616,
+          97071,
+          45.07
+        ],
+        [
+          34,
+          "male",
+          0.001661,
+          96914,
+          44.15
+        ],
+        [
+          35,
+          "male",
+          0.001716,
+          96753,
+          43.22
+        ],
+        [
+          36,
+          "male",
+          0.001782,
+          96587,
+          42.29
+        ],
+        [
+          37,
+          "male",
+          0.001854,
+          96415,
+          41.37
+        ],
+        [
+          38,
+          "male",
+          0.001931,
+          96236,
+          40.44
+        ],
+        [
+          39,
+          "male",
+          0.002018,
+          96050,
+          39.52
+        ],
+        [
+          40,
+          "male",
+          0.002123,
+          95856,
+          38.6
+        ],
+        [
+          41,
+          "male",
+          0.002252,
+          95653,
+          37.68
+        ],
+        [
+          42,
+          "male",
+          0.002413,
+          95437,
+          36.76
+        ],
+        [
+          43,
+          "male",
+          0.002611,
+          95207,
+          35.85
+        ],
+        [
+          44,
+          "male",
+          0.002845,
+          94958,
+          34.95
+        ],
+        [
+          45,
+          "male",
+          0.003109,
+          94688,
+          34.04
+        ],
+        [
+          46,
+          "male",
+          0.003402,
+          94394,
+          33.15
+        ],
+        [
+          47,
+          "male",
+          0.003736,
+          94073,
+          32.26
+        ],
+        [
+          48,
+          "male",
+          0.004114,
+          93721,
+          31.38
+        ],
+        [
+          49,
+          "male",
+          0.004533,
+          93336,
+          30.51
+        ],
+        [
+          50,
+          "male",
+          0.004987,
+          92913,
+          29.64
+        ],
+        [
+          51,
+          "male",
+          0.005473,
+          92449,
+          28.79
+        ],
+        [
+          52,
+          "male",
+          0.005997,
+          91943,
+          27.94
+        ],
+        [
+          53,
+          "male",
+          0.00656,
+          91392,
+          27.11
+        ],
+        [
+          54,
+          "male",
+          0.007159,
+          90792,
+          26.29
+        ],
+        [
+          55,
+          "male",
+          0.007803,
+          90142,
+          25.47
+        ],
+        [
+          56,
+          "male",
+          0.00848,
+          89439,
+          24.67
+        ],
+        [
+          57,
+          "male",
+          0.00917,
+          88681,
+          23.87
+        ],
+        [
+          58,
+          "male",
+          0.009863,
+          87867,
+          23.09
+        ],
+        [
+          59,
+          "male",
+          0.010572,
+          87001,
+          22.32
+        ],
+        [
+          60,
+          "male",
+          0.011354,
+          86081,
+          21.55
+        ],
+        [
+          61,
+          "male",
+          0.012202,
+          85104,
+          20.79
+        ],
+        [
+          62,
+          "male",
+          0.013061,
+          84065,
+          20.04
+        ],
+        [
+          63,
+          "male",
+          0.01392,
+          82967,
+          19.3
+        ],
+        [
+          64,
+          "male",
+          0.014819,
+          81812,
+          18.57
+        ],
+        [
+          65,
+          "male",
+          0.015826,
+          80600,
+          17.84
+        ],
+        [
+          66,
+          "male",
+          0.016986,
+          79324,
+          17.12
+        ],
+        [
+          67,
+          "male",
+          0.018295,
+          77977,
+          16.4
+        ],
+        [
+          68,
+          "male",
+          0.019776,
+          76550,
+          15.7
+        ],
+        [
+          69,
+          "male",
+          0.021448,
+          75036,
+          15.01
+        ],
+        [
+          70,
+          "male",
+          0.02338,
+          73427,
+          14.32
+        ],
+        [
+          71,
+          "male",
+          0.025549,
+          71710,
+          13.66
+        ],
+        [
+          72,
+          "male",
+          0.027885,
+          69878,
+          13
+        ],
+        [
+          73,
+          "male",
+          0.030374,
+          67930,
+          12.36
+        ],
+        [
+          74,
+          "male",
+          0.033099,
+          65866,
+          11.73
+        ],
+        [
+          75,
+          "male",
+          0.036254,
+          63686,
+          11.11
+        ],
+        [
+          76,
+          "male",
+          0.039882,
+          61377,
+          10.51
+        ],
+        [
+          77,
+          "male",
+          0.043879,
+          58930,
+          9.93
+        ],
+        [
+          78,
+          "male",
+          0.048256,
+          56344,
+          9.36
+        ],
+        [
+          79,
+          "male",
+          0.053123,
+          53625,
+          8.81
+        ],
+        [
+          80,
+          "male",
+          0.058711,
+          50776,
+          8.28
+        ],
+        [
+          81,
+          "male",
+          0.065081,
+          47795,
+          7.76
+        ],
+        [
+          82,
+          "male",
+          0.072139,
+          44685,
+          7.27
+        ],
+        [
+          83,
+          "male",
+          0.079912,
+          41461,
+          6.8
+        ],
+        [
+          84,
+          "male",
+          0.088529,
+          38148,
+          6.34
+        ],
+        [
+          85,
+          "male",
+          0.098148,
+          34771,
+          5.91
+        ],
+        [
+          86,
+          "male",
+          0.108902,
+          31358,
+          5.5
+        ],
+        [
+          87,
+          "male",
+          0.120886,
+          27943,
+          5.11
+        ],
+        [
+          88,
+          "male",
+          0.134149,
+          24565,
+          4.74
+        ],
+        [
+          89,
+          "male",
+          0.148699,
+          21270,
+          4.4
+        ],
+        [
+          90,
+          "male",
+          0.164525,
+          18107,
+          4.08
+        ],
+        [
+          91,
+          "male",
+          0.1816,
+          15128,
+          3.79
+        ],
+        [
+          92,
+          "male",
+          0.199884,
+          12381,
+          3.52
+        ],
+        [
+          93,
+          "male",
+          0.219331,
+          9906,
+          3.27
+        ],
+        [
+          94,
+          "male",
+          0.239886,
+          7733,
+          3.05
+        ],
+        [
+          95,
+          "male",
+          0.260269,
+          5878,
+          2.85
+        ],
+        [
+          96,
+          "male",
+          0.280109,
+          4348,
+          2.68
+        ],
+        [
+          97,
+          "male",
+          0.299013,
+          3130,
+          2.53
+        ],
+        [
+          98,
+          "male",
+          0.316578,
+          2194,
+          2.39
+        ],
+        [
+          99,
+          "male",
+          0.332406,
+          1500,
+          2.27
+        ],
+        [
+          100,
+          "male",
+          0.349027,
+          1001,
+          2.15
+        ],
+        [
+          101,
+          "male",
+          0.366478,
+          652,
+          2.04
+        ],
+        [
+          102,
+          "male",
+          0.384802,
+          413,
+          1.93
+        ],
+        [
+          103,
+          "male",
+          0.404042,
+          254,
+          1.83
+        ],
+        [
+          104,
+          "male",
+          0.424244,
+          151,
+          1.73
+        ],
+        [
+          105,
+          "male",
+          0.445456,
+          87,
+          1.63
+        ],
+        [
+          106,
+          "male",
+          0.467729,
+          48,
+          1.54
+        ],
+        [
+          107,
+          "male",
+          0.491116,
+          26,
+          1.45
+        ],
+        [
+          108,
+          "male",
+          0.515671,
+          13,
+          1.36
+        ],
+        [
+          109,
+          "male",
+          0.541455,
+          6,
+          1.28
+        ],
+        [
+          110,
+          "male",
+          0.568528,
+          3,
+          1.2
+        ],
+        [
+          111,
+          "male",
+          0.596954,
+          1,
+          1.13
+        ],
+        [
+          112,
+          "male",
+          0.626802,
+          1,
+          1.05
+        ],
+        [
+          113,
+          "male",
+          0.658142,
+          0,
+          0.98
+        ],
+        [
+          114,
+          "male",
+          0.691049,
+          0,
+          0.92
+        ],
+        [
+          115,
+          "male",
+          0.725602,
+          0,
+          0.86
+        ],
+        [
+          116,
+          "male",
+          0.761882,
+          0,
+          0.79
+        ],
+        [
+          117,
+          "male",
+          0.799976,
+          0,
+          0.74
+        ],
+        [
+          118,
+          "male",
+          0.839975,
+          0,
+          0.68
+        ],
+        [
+          119,
+          "male",
+          0.881973,
+          0,
+          0.63
+        ],
+        [
+          0,
+          "female",
+          0.005313,
+          100000,
+          81.11
+        ],
+        [
+          1,
+          "female",
+          0.000346,
+          99469,
+          80.54
+        ],
+        [
+          2,
+          "female",
+          0.000221,
+          99434,
+          79.57
+        ],
+        [
+          3,
+          "female",
+          0.000162,
+          99412,
+          78.59
+        ],
+        [
+          4,
+          "female",
+          0.000131,
+          99396,
+          77.6
+        ],
+        [
+          5,
+          "female",
+          0.000116,
+          99383,
+          76.61
+        ],
+        [
+          6,
+          "female",
+          0.000106,
+          99372,
+          75.62
+        ],
+        [
+          7,
+          "female",
+          0.000098,
+          99361,
+          74.63
+        ],
+        [
+          8,
+          "female",
+          0.000091,
+          99351,
+          73.64
+        ],
+        [
+          9,
+          "female",
+          0.000086,
+          99342,
+          72.64
+        ],
+        [
+          10,
+          "female",
+          0.000084,
+          99334,
+          71.65
+        ],
+        [
+          11,
+          "female",
+          0.000087,
+          99325,
+          70.66
+        ],
+        [
+          12,
+          "female",
+          0.0001,
+          99317,
+          69.66
+        ],
+        [
+          13,
+          "female",
+          0.000124,
+          99307,
+          68.67
+        ],
+        [
+          14,
+          "female",
+          0.000157,
+          99294,
+          67.68
+        ],
+        [
+          15,
+          "female",
+          0.000194,
+          99279,
+          66.69
+        ],
+        [
+          16,
+          "female",
+          0.000232,
+          99260,
+          65.7
+        ],
+        [
+          17,
+          "female",
+          0.000269,
+          99237,
+          64.72
+        ],
+        [
+          18,
+          "female",
+          0.000304,
+          99210,
+          63.73
+        ],
+        [
+          19,
+          "female",
+          0.000338,
+          99180,
+          62.75
+        ],
+        [
+          20,
+          "female",
+          0.000373,
+          99146,
+          61.77
+        ],
+        [
+          21,
+          "female",
+          0.000409,
+          99109,
+          60.8
+        ],
+        [
+          22,
+          "female",
+          0.000442,
+          99069,
+          59.82
+        ],
+        [
+          23,
+          "female",
+          0.000471,
+          99025,
+          58.85
+        ],
+        [
+          24,
+          "female",
+          0.000497,
+          98978,
+          57.87
+        ],
+        [
+          25,
+          "female",
+          0.000524,
+          98929,
+          56.9
+        ],
+        [
+          26,
+          "female",
+          0.000553,
+          98877,
+          55.93
+        ],
+        [
+          27,
+          "female",
+          0.000582,
+          98822,
+          54.96
+        ],
+        [
+          28,
+          "female",
+          0.000611,
+          98765,
+          53.99
+        ],
+        [
+          29,
+          "female",
+          0.000641,
+          98705,
+          53.03
+        ],
+        [
+          30,
+          "female",
+          0.000673,
+          98641,
+          52.06
+        ],
+        [
+          31,
+          "female",
+          0.00071,
+          98575,
+          51.1
+        ],
+        [
+          32,
+          "female",
+          0.000753,
+          98505,
+          50.13
+        ],
+        [
+          33,
+          "female",
+          0.000805,
+          98431,
+          49.17
+        ],
+        [
+          34,
+          "female",
+          0.000864,
+          98351,
+          48.21
+        ],
+        [
+          35,
+          "female",
+          0.000932,
+          98266,
+          47.25
+        ],
+        [
+          36,
+          "female",
+          0.001005,
+          98175,
+          46.29
+        ],
+        [
+          37,
+          "female",
+          0.001082,
+          98076,
+          45.34
+        ],
+        [
+          38,
+          "female",
+          0.00116,
+          97970,
+          44.39
+        ],
+        [
+          39,
+          "female",
+          0.001243,
+          97856,
+          43.44
+        ],
+        [
+          40,
+          "female",
+          0.001336,
+          97735,
+          42.49
+        ],
+        [
+          41,
+          "female",
+          0.001442,
+          97604,
+          41.55
+        ],
+        [
+          42,
+          "female",
+          0.001562,
+          97463,
+          40.61
+        ],
+        [
+          43,
+          "female",
+          0.001698,
+          97311,
+          39.67
+        ],
+        [
+          44,
+          "female",
+          0.001849,
+          97146,
+          38.74
+        ],
+        [
+          45,
+          "female",
+          0.002014,
+          96966,
+          37.81
+        ],
+        [
+          46,
+          "female",
+          0.002195,
+          96771,
+          36.88
+        ],
+        [
+          47,
+          "female",
+          0.002402,
+          96559,
+          35.96
+        ],
+        [
+          48,
+          "female",
+          0.002639,
+          96327,
+          35.05
+        ],
+        [
+          49,
+          "female",
+          0.002903,
+          96072,
+          34.14
+        ],
+        [
+          50,
+          "female",
+          0.003189,
+          95794,
+          33.24
+        ],
+        [
+          51,
+          "female",
+          0.003488,
+          95488,
+          32.34
+        ],
+        [
+          52,
+          "female",
+          0.003795,
+          95155,
+          31.45
+        ],
+        [
+          53,
+          "female",
+          0.004105,
+          94794,
+          30.57
+        ],
+        [
+          54,
+          "female",
+          0.004423,
+          94405,
+          29.7
+        ],
+        [
+          55,
+          "female",
+          0.004775,
+          93987,
+          28.83
+        ],
+        [
+          56,
+          "female",
+          0.005153,
+          93539,
+          27.96
+        ],
+        [
+          57,
+          "female",
+          0.005528,
+          93057,
+          27.1
+        ],
+        [
+          58,
+          "female",
+          0.005893,
+          92542,
+          26.25
+        ],
+        [
+          59,
+          "female",
+          0.006266,
+          91997,
+          25.4
+        ],
+        [
+          60,
+          "female",
+          0.006688,
+          91420,
+          24.56
+        ],
+        [
+          61,
+          "female",
+          0.007176,
+          90809,
+          23.72
+        ],
+        [
+          62,
+          "female",
+          0.007724,
+          90157,
+          22.89
+        ],
+        [
+          63,
+          "female",
+          0.008339,
+          89461,
+          22.07
+        ],
+        [
+          64,
+          "female",
+          0.009034,
+          88715,
+          21.25
+        ],
+        [
+          65,
+          "female",
+          0.009832,
+          87914,
+          20.44
+        ],
+        [
+          66,
+          "female",
+          0.01074,
+          87049,
+          19.63
+        ],
+        [
+          67,
+          "female",
+          0.011754,
+          86114,
+          18.84
+        ],
+        [
+          68,
+          "female",
+          0.012881,
+          85102,
+          18.06
+        ],
+        [
+          69,
+          "female",
+          0.014141,
+          84006,
+          17.29
+        ],
+        [
+          70,
+          "female",
+          0.015612,
+          82818,
+          16.53
+        ],
+        [
+          71,
+          "female",
+          0.017275,
+          81525,
+          15.78
+        ],
+        [
+          72,
+          "female",
+          0.019047,
+          80117,
+          15.05
+        ],
+        [
+          73,
+          "female",
+          0.020909,
+          78591,
+          14.34
+        ],
+        [
+          74,
+          "female",
+          0.022939,
+          76947,
+          13.63
+        ],
+        [
+          75,
+          "female",
+          0.025297,
+          75182,
+          12.94
+        ],
+        [
+          76,
+          "female",
+          0.028045,
+          73280,
+          12.26
+        ],
+        [
+          77,
+          "female",
+          0.031131,
+          71225,
+          11.6
+        ],
+        [
+          78,
+          "female",
+          0.034582,
+          69008,
+          10.96
+        ],
+        [
+          79,
+          "female",
+          0.038467,
+          66621,
+          10.33
+        ],
+        [
+          80,
+          "female",
+          0.043008,
+          64059,
+          9.73
+        ],
+        [
+          81,
+          "female",
+          0.048175,
+          61304,
+          9.14
+        ],
+        [
+          82,
+          "female",
+          0.053772,
+          58350,
+          8.58
+        ],
+        [
+          83,
+          "female",
+          0.05977,
+          55213,
+          8.04
+        ],
+        [
+          84,
+          "female",
+          0.066367,
+          51913,
+          7.52
+        ],
+        [
+          85,
+          "female",
+          0.073828,
+          48467,
+          7.01
+        ],
+        [
+          86,
+          "female",
+          0.082382,
+          44889,
+          6.53
+        ],
+        [
+          87,
+          "female",
+          0.092183,
+          41191,
+          6.08
+        ],
+        [
+          88,
+          "female",
+          0.103305,
+          37394,
+          5.64
+        ],
+        [
+          89,
+          "female",
+          0.115746,
+          33531,
+          5.23
+        ],
+        [
+          90,
+          "female",
+          0.129475,
+          29650,
+          4.85
+        ],
+        [
+          91,
+          "female",
+          0.144443,
+          25811,
+          4.5
+        ],
+        [
+          92,
+          "female",
+          0.16059,
+          22083,
+          4.18
+        ],
+        [
+          93,
+          "female",
+          0.177853,
+          18536,
+          3.88
+        ],
+        [
+          94,
+          "female",
+          0.196165,
+          15240,
+          3.61
+        ],
+        [
+          95,
+          "female",
+          0.214677,
+          12250,
+          3.37
+        ],
+        [
+          96,
+          "female",
+          0.233091,
+          9620,
+          3.16
+        ],
+        [
+          97,
+          "female",
+          0.251082,
+          7378,
+          2.96
+        ],
+        [
+          98,
+          "female",
+          0.268304,
+          5525,
+          2.79
+        ],
+        [
+          99,
+          "female",
+          0.284403,
+          4043,
+          2.63
+        ],
+        [
+          100,
+          "female",
+          0.301467,
+          2893,
+          2.48
+        ],
+        [
+          101,
+          "female",
+          0.319555,
+          2021,
+          2.33
+        ],
+        [
+          102,
+          "female",
+          0.338728,
+          1375,
+          2.19
+        ],
+        [
+          103,
+          "female",
+          0.359052,
+          909,
+          2.06
+        ],
+        [
+          104,
+          "female",
+          0.380595,
+          583,
+          1.93
+        ],
+        [
+          105,
+          "female",
+          0.403431,
+          361,
+          1.81
+        ],
+        [
+          106,
+          "female",
+          0.427637,
+          215,
+          1.69
+        ],
+        [
+          107,
+          "female",
+          0.453295,
+          123,
+          1.58
+        ],
+        [
+          108,
+          "female",
+          0.480492,
+          67,
+          1.47
+        ],
+        [
+          109,
+          "female",
+          0.509322,
+          35,
+          1.37
+        ],
+        [
+          110,
+          "female",
+          0.539881,
+          17,
+          1.27
+        ],
+        [
+          111,
+          "female",
+          0.572274,
+          8,
+          1.18
+        ],
+        [
+          112,
+          "female",
+          0.606611,
+          3,
+          1.09
+        ],
+        [
+          113,
+          "female",
+          0.643007,
+          1,
+          1.01
+        ],
+        [
+          114,
+          "female",
+          0.681588,
+          0,
+          0.93
+        ],
+        [
+          115,
+          "female",
+          0.722483,
+          0,
+          0.86
+        ],
+        [
+          116,
+          "female",
+          0.761882,
+          0,
+          0.79
+        ],
+        [
+          117,
+          "female",
+          0.799976,
+          0,
+          0.74
+        ],
+        [
+          118,
+          "female",
+          0.839975,
+          0,
+          0.68
+        ],
+        [
+          119,
+          "female",
+          0.881973,
+          0,
+          0.63
+        ]
+      ]
+    }
+  ],
+  "scripts": [
+    {
+      "id": "1",
+      "name": "test",
+      "text": ""
+    },
+    {
+      "id": "2",
+      "name": "test1",
+      "text": ""
+    }
+  ]
+}

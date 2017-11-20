@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="66.145844mm"
+   height="4.2350512mm"
+   viewBox="0 0 66.145844 4.2350512"
+   version="1.1"
+   id="svg65"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="new-node-right.svg">
+  <defs
+     id="defs59" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="7.039999"
+     inkscape:cx="125.00002"
+     inkscape:cy="8.0032588"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1" />
+  <metadata
+     id="metadata62">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-83.343747,-145.20391)">
+    <path
+       id="Line_Static"
+       class="cls-3"
+       d="M 116.88975,147.32058 H 83.343747"
+       inkscape:connector-curvature="0"
+       style="stroke:#ffff8d;stroke-width:0.08863029" />
+    <path
+       style="fill:#033c6c;stroke:#ffff8d;stroke-width:0.52916664px"
+       inkscape:connector-curvature="0"
+       d="m 116.68124,145.46849 a 1.8520833,1.8520833 0 1 1 -1.85207,1.85208 1.8520833,1.8520833 0 0 1 1.85207,-1.85208 z"
+       class="cls-5"
+       data-name="Dot_incomplete"
+       id="Dot_incomplete-9" />
+  </g>
+</svg>

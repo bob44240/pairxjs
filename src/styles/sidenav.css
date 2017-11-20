@@ -1,0 +1,16 @@
+md-sidenav {
+  width: 100%;
+  color: #fff !important;
+  background-color: #efefef !important;
+}
+
+.md-sidenav-button {
+  background-color: #233341 !important;
+}
+
+.mat-sidenav-backdrop.mat-sidenav-shown {
+  background-color: transparent !important;
+  position: relative !important;
+  display: inline !important;
+  z-index: 0 !important;
+}

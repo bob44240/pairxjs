@@ -1,0 +1,33 @@
+<div class="page-full" style="height: 100vh; width: 100%;
+                              overflow: hidden; max-height: 100vh;">
+  <div class="right-shadow z-50" style="background-color: white;">
+    <md-tab-group [(selectedIndex)]="index">
+      <md-tab label="Trace" style="width: 100%; overflow: hidden;">
+        <div style="height: 600px; width: 100%; overflow: hidden;">
+          <app-trace-results-page [active]="(index === 0) && _active">
+          </app-trace-results-page>
+        </div>
+      </md-tab>
+      <md-tab label="Outcomes">
+        <div style="height: 600px; width: 100%; overflow: hidden;">
+          <app-outcomes-results-page [active]="(index === 1) && _active">
+          </app-outcomes-results-page>
+        </div>
+      </md-tab>
+      <md-tab label="Costs">
+        <div style="height: 600px; width: 100%; overflow: hidden;">
+          <app-costs-results-page [active]="(index === 2) && _active">
+          </app-costs-results-page>
+        </div>
+      </md-tab>
+      <md-tab label="NMB"></md-tab>
+      <md-tab label="CE">
+        <div style="height: 600px; width: 100%; overflow: hidden;">
+          <app-ce-results-page [active]="(index === 4) && _active">
+          </app-ce-results-page>
+        </div>
+      </md-tab>
+      <md-tab label="VBP"></md-tab>
+    </md-tab-group>
+  </div>
+</div>

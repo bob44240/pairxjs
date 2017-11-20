@@ -1,0 +1,121 @@
+.app-container {
+  height: calc(100vh);
+}
+
+.left-toolbar {
+  align-items: center;
+  background-color: mat-color($md-primary, 500);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-around;
+  margin-right: 8px;
+  padding: 12px 0;
+  width: 48px;
+
+  a {
+    cursor: pointer;
+    height: 36px;
+    min-height: 36px;
+    min-width: 36px;
+    text-decoration: none;
+    width: 36px;
+  }
+}
+
+.subway {
+  background-color: mat-color($md-primary, 500);
+  margin-bottom: 8px;
+}
+
+.main-container {
+  margin-right: 8px;
+  width: 100%;
+}
+
+.mat-sidenav-content {
+  display: flex !important;
+  overflow: visible !important; // MD Override
+}
+
+.heRo-nav-tab {
+  & > div:first-of-type {
+    background-color: #fff;
+    box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  }
+}
+
+.heRo-nav-tab > md-tab-header.mat-tab-header {
+  // The subway bar
+  border: 0;
+  box-shadow: 0 3px 3px -2px rgba(0, 0, 0, 0.2), 0 3px 4px 0 rgba(0, 0, 0, 0.14), 0 1px 8px 0 rgba(0, 0, 0, 0.12);
+  height: 80px;
+  margin-bottom: 8px;
+}
+
+.app-decision-page-style {
+  align-items: center;
+  background-color: mat-color($md-primary, 500);
+  color: mat-color($md-primary, 50);
+  display: flex;
+  height: 64px;
+  min-height: 64px;
+  padding: 0 48px;
+  position: relative;
+  z-index: 10;
+
+  input {
+    float: right;
+  }
+}
+
+md-sidenav-container {
+  background-color: inherit !important; // MD override
+  height: calc(100vh - 80px); // system nav (64px) + 2 * 8px margins
+  margin-bottom: 16px;
+  overflow: inherit !important; // MD override
+}
+
+.mat-tab-body-wrapper {
+  height: 100%;
+}
+// This will show the shadow around the wizard cards, but will also show the card sliding off the page as well as occluding the left toolbar.
+/*
+.mat-tab-body,
+.mat-tab-body-content,
+.mat-tab-body-wrapper {
+  overflow: visible !important; // MD override, otherwise shadows are hidden
+  overflow-y: visible !important;
+}
+
+.mat-tab-body-content {
+  overflow-x: hidden !important;
+}
+*/
+.model-editor-tab {
+  align-items: center;
+  background-color: mat-color($md-primary, 500);
+  color: #fff;
+  display: flex;
+  height: 64px;
+  justify-content: space-between;
+  padding: 0 48px;
+  position: relative;
+  z-index: 30;
+}
+// Pills and Tags
+
+.datatype {
+  align-items: center;
+  color: #fff;
+  display: inline-flex;
+  font-size: 14px;
+  font-weight: 500;
+  height: 24px !important; // Overrides ag-grid theme for header row height
+  justify-content: center;
+  padding: 0 10px;
+}
+
+.datatype-pill {
+  border-radius: 12px;
+}

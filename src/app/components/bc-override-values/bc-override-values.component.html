@@ -1,0 +1,18 @@
+<div *ngFor="let value of overrides_" style="padding-left: 10px; padding-right: 10px;">
+  <div class="override-pill">
+    <span class="datatype datatype-pill datatype-input">{{value.name}}</span>
+  </div>
+  <md-input-container class="override-input">
+    <input mdInput type="text" [(ngModel)]="value.value" (blur)="updateOverride(value)"
+                               (keyup.enter)="updateOverride(value)">
+  </md-input-container>
+  <span style="float: right; cursor:pointer;margin:0px 2px 0px 0px;"
+        (click)="removeOverride(value.id)">
+    <img src="/assets/icon-delete-24.svg"
+    id="remove"
+    alt="remove"
+    title="Remove override value"
+    height="20px" width="auto">
+  </span>
+</div>
+<button md-button (click)="addOverrides()">Add</button>

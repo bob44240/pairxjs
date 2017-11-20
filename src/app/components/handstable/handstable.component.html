@@ -1,0 +1,44 @@
+<div class="hot-page">
+  <div class="model-editor-tab mat-elevation-z6">
+    <span>Tables</span>
+  </div>
+
+  <div class="hot-page-container">
+
+    <div class="table-selection-container mat-elevation-z3 z-15">
+
+      <div class="table-add-new-table">
+        <button md-button class="button-add-new-table" (click)="addTable()">
+          <md-icon>add</md-icon>
+          Add new table
+        </button>
+      </div>
+
+      <div class="table-select-table-container">
+        <!--<md-list class="container">-->
+        <ul class="table-list">
+          <li class="table-row" *ngFor="let table of tableData; let i = index" [ngClass]="{'file-active': activeTable === i, 'table-row': true}">
+            <div>
+              <span class="datatype datatype-pill datatype-table" (click)="displayTable(i)">{{table.name}}</span>
+            </div>
+
+            <div class="table-actions">
+              <div (click)="deleteTable(table)" class="toolbar-button">
+                <md-icon>delete</md-icon>
+              </div>
+              <div (click)="renameTable(table)" class="toolbar-button">
+                <md-icon>edit</md-icon>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- HandOnTable Begins -->
+    <div class="hot-container" #tableParent (window:resize)="setSize();">
+      <div class="hot" #currentTable></div>
+      <!--<hot-table *ngIf="showTable" [settings]="settings"></hot-table>-->
+    </div>
+  </div>
+</div>

@@ -1,0 +1,16 @@
+<md-sidenav-container style="height: 100%;">
+    <md-sidenav mode="side" position="end" align="end"
+                [(opened)]="_open" style="width: 400px;"
+                (open)="openFinish()" (close)="openFinish()">
+      <div class="hero-results-sidebar">
+        <div>
+          <span (click)="toggle()" style="float: right; cursor:pointer;">
+            <label>Hide Options</label>
+            <img src="/assets/icon-settings-graph.svg" height="30px" width="30px">
+          </span>
+        </div>
+        <ng-content select="[side-panel]"></ng-content>
+      </div>
+    </md-sidenav>
+    <ng-content select="[main-panel]"></ng-content>
+  </md-sidenav-container>

@@ -1,0 +1,92 @@
+<div class="flex-col-container app-wizard-sidenav mat-elevation-z3">
+  <div class="flex-item-fixed my-8">
+    <a>
+      <img [src]="active === 0 ? '/assets/icon-edit-active.svg':'/assets/icon-edit-inactive.svg'"
+            alt="Model Editor"
+            (click)="buttonClicked(0)"
+            title="Model Editor">
+    </a>
+  </div>
+  <div class="flex-item-fixed my-8">
+    <a>
+      <img [src]="active === 1 ? '/assets/icon-variables-active.svg':'/assets/icon-variables-inactive.svg'"
+          alt="Variables"
+          (click)="buttonClicked(1)"
+          title="Variables">
+    </a>
+  </div>
+  <div class="flex-item-fixed my-8">
+    <a>
+      <img [src]="active === 2 ? '/assets/icon-table_edit-active.svg':'/assets/icon-table_edit.svg'"
+        alt="Tables"
+        (click)="buttonClicked(2)"
+        title="Tables">
+    </a>
+  </div>
+  <div class="flex-item-fixed my-8">
+    <a>
+      <img [src]="active === 3 ? '/assets/icon-code_edit-active.svg':'/assets/icon-code_edit.svg'"
+        alt="Code"
+        (click)="buttonClicked(3)"
+        title="Code">
+    </a>
+  </div>
+  <div class="flex-item-fixed my-8">
+    <a>
+      <img [src]="active === 4 ? '/assets/icon-deterministic-active.svg':'/assets/icon-deterministic.svg'"
+        alt="DSA Inputs"
+        (click)="buttonClicked(4)"
+        title="DSA Inputs">
+    </a>
+  </div>
+  <div class="flex-item-fixed my-8">
+    <a>
+      <img [src]="active === 5 ? '/assets/icon-probabilistic-active.svg':'/assets/icon-probabilistic.svg'"
+        alt="PSA Inputs"
+        (click)="buttonClicked(5)"
+        title="PSA Inputs">
+    </a>
+  </div>
+  <div class="flex-item-fixed my-8">
+    <a>
+      <img [src]="active === 6 ? '/assets/icon-ref-active.svg':'/assets/icon-ref.svg'"
+          alt="Base Case Results"
+          (click)="buttonClicked(6)"
+          title="Base Case Results">
+    </a>
+  </div>
+  <div class="flex-item-fixed my-8">
+    <a>
+      <img [src]="active === 7 ? '/assets/icon-dsa-active.svg':'/assets/icon-dsa.svg'"
+        alt="DSA Results"
+        (click)="buttonClicked(7)"
+        title="DSA Results">
+    </a>
+  </div>
+    <div class="flex-item-fixed my-8">
+    <a>
+      <img [src]="active === 8 ? '/assets/icon-psa-active.svg':'/assets/icon-psa.svg'"
+        alt="PSA Results"
+        (click)="buttonClicked(8)"
+        title="PSA Results">
+    </a>
+  </div>
+  <div class="flex-item-fixed my-8">
+    <a>
+      <img [src]="active === 9 ? '/assets/icon-import_export-active.svg':'/assets/icon-import_export.svg'"
+        alt="Import/Export"
+        (click)="buttonClicked(9)"
+        title="Import/Export">
+    </a>
+  </div>
+  <div class="flex-item-fixed my-8">
+    <a>
+      <img [src]="active === 10 ? '/assets/icon-settings-active.svg':'/assets/icon-settings.svg'"
+          alt="Settings"
+          (click)="buttonClicked(10)"
+          title="Settings">
+    </a>
+  </div>
+  <div class="flex-item-grow">
+  </div>
+</div>

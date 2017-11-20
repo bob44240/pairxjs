@@ -1,0 +1,12 @@
+<div class="container" layout="column" (keyup.esc)="dialogRef.close({data: 'Cancel'})">
+  <md-card-title>Add New Group Attribute</md-card-title>
+  
+  <md-input-container class="row">
+    <input #newAttrib mdInput placeholder="Enter New Attribute Name" (keyup.enter)="acceptChanges(newAttrib.value)" />
+  </md-input-container>
+  
+  <div class="modal-control">
+    <button md-button color="accent" (click)="acceptChanges(newAttrib.value)">Add</button>
+    <button md-button (click)="dialogRef.close({data: 'Cancel'})">Cancel</button>
+  </div>
+</div>

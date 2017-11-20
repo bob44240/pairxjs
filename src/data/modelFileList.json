@@ -1,0 +1,8 @@
+{
+    "templates" : [
+         { "filename": "modelEmpty.json" },
+         { "filename": "modelTemplate1.json" },
+         { "filename": "modelTemplate2.json" },
+         { "filename": "modelTemplate3.json" }
+    ]
+}

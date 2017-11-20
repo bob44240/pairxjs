@@ -1,0 +1,15 @@
+// Import Angular MD theme
+@import '~@angular/material/theming';
+
+// always include only once per project
+@include mat-core();
+
+// Import our custom theme
+@import 'hero-default-theme.scss';
+
+// specify theme class eg: <body class="my-theme"> ... </body>
+.hero-default-theme {
+  
+  // use our theme with angular-material-theme mixin
+  @include angular-material-theme($hero-default-theme);
+}

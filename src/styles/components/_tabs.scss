@@ -1,0 +1,96 @@
+/*****************************************
+** First-level tabs
+** - Blue background
+** - White text
+** - Red underline for active
+*****************************************/
+.heRo-nav-tab .mat-tab-label {
+    padding: 5px 0px 0px 0px !important;
+    height: 68px !important;
+    width: 100px !important;
+    min-width: 90px !important;
+    line-height: 24px !important;
+    opacity: 1 !important;
+}
+
+.heRo-nav-tab .mat-tab-list {
+    background-color: #233341;
+    color: #ffffff !important;
+    font-weight: normal !important;
+    opacity: 1 !important;
+}
+
+.heRo-nav-tab .mat-tab-label-container {
+    background-color: #4885ed;
+    color: white !important;
+    opacity: 1 !important;
+}
+
+.heRo-nav-tab .mat-tab-header-pagination {
+    background-color: #233341;
+    color: white !important;
+    opacity: 1 !important;
+}
+
+.heRo-nav-tab md-ink-bar {
+    background-color: #233341 !important;
+    opacity: 1 !important;
+}
+
+.mat-tab-link {
+    opacity: 1 !important;
+}
+
+.mat-select-placeholder {
+    color: rgba(0, 0, 0, .38) !important;
+}
+
+.heRo-nav-tab .mat-tab-label-active {
+    background-color: #233341 !important;
+    opacity: 1 !important;
+}
+
+/*****************************************
+** Second-level tabs
+** - Grey inactive background
+** - Grey inactive background
+** - White active background
+** - Black text
+** - Red underline for active
+*****************************************/
+
+.heRo-card-tab-group .mat-tab-label {
+    color: black !important;
+    height: 48px !important;
+}
+
+.heRo-card-tab-group md-ink-bar {
+    background-color: #db3236 !important;
+    opacity: 1 !important;
+}
+
+.heRo-card-tab-group .mat-tab-header-pagination {
+    background-color: #eeeeee;
+    color: black !important;
+    opacity: 1 !important;
+}
+
+.heRo-nav-tab .mat-tab-label-container {
+    background-color: #eeeeee !important;
+}
+
+.heRo-card-tab-group .mat-tab-label-active {
+    background-color: white !important;
+    color: #db3236 !important;
+}
+
+.mat-tab-label {
+    opacity: 1;
+    color: white;
+}
+
+.heRo-card-tab-group .mat-tab-list {
+    background-color: #eeeeee !important;
+    /*background-color: white !important;*/
+    color: black !important;
+}

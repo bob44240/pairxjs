@@ -1,0 +1,25 @@
+* {
+  box-sizing: border-box;
+}
+
+.my-8 {
+  margin: 8px 0;
+}
+
+.mx-8 {
+  margin: 0 8px;
+}
+
+.my-12 {
+  margin: 12px 0;
+}
+
+.z-30 {
+  position: relative;
+  z-index: 30;
+}
+
+.z-15 {
+  position: relative;
+  z-index: 15;
+}

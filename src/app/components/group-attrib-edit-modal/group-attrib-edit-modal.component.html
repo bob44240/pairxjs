@@ -1,0 +1,21 @@
+<div class="container" layout="column" (keyup.esc)="dialogRef.close({data: 'Cancel'})">
+  <md-card-title>Edit Group Attribute</md-card-title>
+  
+  <div class="container">
+    <div *ngFor="let a of data; let i = index" class="row">
+      <div>
+        <input #editValue md-input class="datatype datatype-pill datatype-groupattrib" value="{{ a.name }}" (keyup.enter)="renameAttribute(i, editValue.value)" />
+      </div>
+      <div align="right">
+        <button md-button color="accent" (click)="renameAttribute(i, editValue.value)">Rename</button>
+      </div>
+      <div align="right">
+        <button md-button color="accent" (click)="deleteAttribute(i)">Delete</button>
+      </div>
+    </div>
+  </div>
+  
+  <div class="modal-control">
+    <button md-button (click)="dialogRef.close({data: 'Cancel'})">Cancel</button>
+  </div>
+</div>

@@ -1,0 +1,23 @@
+/*****************************************
+** Cards
+** - Add margins to make sure shadows are visible
+** - Remove all padding to allow full-width children
+*****************************************/
+
+.heRo-card {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px !important;
+}
+
+.heRo-card-container-flush {
+    margin-left: auto;
+    margin-right: auto;
+    width: 100%;
+}
+
+.heRo-card-accordion {
+    padding: 10px 15px;
+}

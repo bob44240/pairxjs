@@ -1,0 +1,196 @@
+/*****************************************
+ag-grid system
+*****************************************/
+
+.ag-material .ag-group-child-count {
+    display: none;
+}
+
+.ag-icon-contracted {
+    title: 'contract';
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+    background-image: 
+url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTEyIDhsLTYgNiAxLjQxIDEuNDFMMTIgMTAuODNsNC41OSA0LjU4TDE4IDE0eiIvPiAgICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PC9zdmc+");
+}
+
+.ag-icon-contracted:hover {
+    background-image: 
+url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjNjY2IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTEyIDhsLTYgNiAxLjQxIDEuNDFMMTIgMTAuODNsNC41OSA0LjU4TDE4IDE0eiIvPiAgICA8cGF0aCBkPSJNMCAwaDI0djI0SDB6IiBmaWxsPSJub25lIi8+PC9zdmc+");
+}
+
+.ag-icon-expanded {
+    title: 'expand';
+    margin-left: 5px;
+    width: 40px;
+    height: 40px;
+    background-size: 40px 40px;
+    background-image: 
+url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjMDAwMDAwIiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTE2LjU5IDguNTlMMTIgMTMuMTcgNy40MSA4LjU5IDYgMTBsNiA2IDYtNnoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==");
+}
+
+.ag-icon-expanded:hover {
+    background-image: 
+url("data:image/svg+xml;base64,PHN2ZyBmaWxsPSIjNjY2IiBoZWlnaHQ9IjI0IiB2aWV3Qm94PSIwIDAgMjQgMjQiIHdpZHRoPSIyNCIgeG1sbnM9Imh0dHA6Ly93d3cudzMub3JnLzIwMDAvc3ZnIj4gICAgPHBhdGggZD0iTTE2LjU5IDguNTlMMTIgMTMuMTcgNy40MSA4LjU5IDYgMTBsNiA2IDYtNnoiLz4gICAgPHBhdGggZD0iTTAgMGgyNHYyNEgweiIgZmlsbD0ibm9uZSIvPjwvc3ZnPg==");
+}
+
+.heRo-ag-grid-cell {
+}
+
+.heRo-ag-grid-cell span {
+    margin-right: -5px;
+}
+
+.heRo-ag-grid-cell img {
+    -moz-transition: all 0.3s;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+}
+
+.heRo-ag-grid-cell img:hover {
+    -moz-transform: scale(1.2);
+    -webkit-transform: scale(1.2);
+    transform: scale(1.2); 
+}
+
+.heRo-ag-grid-formula-bar {
+  overflow: hidden;
+  color: #008;
+  text-overflow: ellipsis;
+  font-family: Roboto Mono;
+  font-weight: bold;
+  font-size: 16px;
+}
+
+.heRo-ag-grid-oval {
+    margin-left: 4px;
+    padding: 2px 14px;
+    text-align: left;
+    font-weight: bold;
+    background: #e0e0e0;
+    color: #bb0000;
+    width: 60%;
+    border-radius: 15px;
+}
+
+.heRo-ag-grid-group-oval {
+    padding: 2px 14px;
+    text-align: left;
+    font-weight: bold;
+    background: #ff7979;
+    color: #fff;
+    width: 60%;
+    border-radius: 15px;
+}
+
+.heRo-ag-grid-group-square {
+    margin-left: 4px;
+    padding: 2px 14px;
+    text-align: left;
+    font-weight: bold;
+    background: #ff7979;
+    color: #fff;
+    width: 40%;
+}
+
+.heRo-ag-grid-state-square {
+    margin-left: 4px;
+    padding: 2px 14px;
+    text-align: left;
+    font-weight: bold;
+    background: #ff893b;
+    color: #fff;
+    width: 40%;
+}
+
+.heRo-ag-grid-state-icon {
+    margin-left: 2px;
+    background: #0099ff;
+    height: 18px;
+    width: auto;
+}
+
+.heRo-ag-grid-strategies-square {
+    margin-left: 4px;
+    padding: 2px 14px;
+    text-align: left;
+    font-weight: bold;
+    background: #9bba58;
+    color: #fff;
+    width: 40%;
+}
+
+.heRo-ag-grid-formula-oval {
+    margin-left: 4px;
+    padding: 2px 14px;
+    text-align: left;
+    font-weight: bold;
+    background: #c0504d;
+    color: #fff;
+    width: 70%;
+    border-radius: 15px;
+}
+
+.heRo-ag-grid-values-oval {
+    margin-left: 4px;
+    padding: 2px 14px;
+    text-align: left;
+    font-weight: bold;
+    background: #c0504d;
+    color: #fff;
+    width: 70%;
+    border-radius: 15px;
+}
+
+.heRo-ag-grid-values-group-oval {
+    vertical-align: super;
+    font-size: 18px;
+    padding: 0px 14px;
+    background: #c0504d;
+    color: #fff;
+    width: 70%;
+    border-radius: 15px;
+}
+
+.heRo-ag-grid-values-group-label {
+    vertical-align: super;
+    font-size: 18px;
+    padding: 0px 5px;
+    color: #000;
+    width: auto;
+}
+
+.heRo-ag-grid-summaries-square {
+    margin-left: 4px;
+    padding: 2px 14px;
+    text-align: left;
+    font-weight: bold;
+    background: #8064A1;
+    color: #fff;
+    width: 70%;
+    border-radius: 15px;
+}
+
+.heRo-ag-grid-summaries-group-oval {
+    vertical-align: super;
+    font-size: 18px;
+    padding: 0px 14px;
+    background: #8064A1;
+    color: #fff;
+    width: 70%;
+    border-radius: 15px;
+}
+
+.heRo-ag-grid-summaries-group-label {
+    vertical-align: super;
+    font-size: 18px;
+    padding: 0px 5px;
+    color: #000;
+    width: auto;
+}
+
+.ag-material .ag-row-selected {
+    background-color: #cdcdcd !important;
+}

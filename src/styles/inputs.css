@@ -1,0 +1,237 @@
+/*****************************************
+** heRo-input
+**
+** Class for styling inputs that have placeholders/labels
+**
+** Goal is to make consistent styling for input, textarea,
+** md-select, and ng2-tag-input w/ placeholder
+** - Inputs should have same height
+** - Inputs shoud have same text-size
+** - Inputs should have underline which highlights when selected
+** - Inputs should have placeholder which moves up and highlights when selected
+** - Text inside inputs should be aligned
+** - Underlines should be aligned
+*****************************************/
+
+
+/*****************************************
+** input / textarea
+*****************************************/
+
+.heRo-input input {
+    width: 100% !important;
+    font-size: inherit !important;
+    height: 20px !important;
+    line-height: 16px !important;
+}
+
+md-input-container.heRo-input {
+    font-size: inherit !important;
+    width: 100% !important;
+}
+
+.heRo-input .mat-input-wrapper {
+    margin-top: 0px;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    height: 20px !important;
+    padding-top: 20px;
+    padding-left: 0px;
+    padding-right: 0px;
+    margin-bottom: 10px;
+}
+
+.heRo-input .mat-input-underline {
+    position: relative;
+}
+
+.heRo-input .mat-input-table {
+    height: 20px !important;
+}
+
+.heRo-input .mat-input-prefix {
+    height: 20px !important;
+}
+
+.heRo-input .mat-input-infix {
+    height: 20px !important;
+}
+
+.heRo-input textarea {
+    height: 16px !important;
+}
+
+.heRo-input .mat-input-placeholder-wrapper {
+    height: 20px !important;
+}
+
+.heRo-input .mat-input-placeholder label {
+    padding-top: 16px !important;
+    top: 0px !important;
+}
+
+.heRo-input .mat-input-placeholder-wrapper label {
+    padding-top: 16px !important;
+    top: 0px !important;
+    font-size: 16px !important;
+}
+
+.heRo-input textarea {
+    width: 100% !important;
+    vertical-align: bottom !important;
+    height: 16px !important;
+    line-height: 16px !important;
+    resize: none;
+}
+
+
+/*****************************************
+** md-select
+*****************************************/
+
+md-select.heRo-input {
+    font-size: inherit !important;
+    padding-top: 20px;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    margin-bottom: 14px !important;
+    width: 100% !important;
+    height: 25px !important;
+}
+
+.heRo-input .mat-select-trigger {
+    height: 25px !important;
+    font-size: 14px;
+}
+
+.heRo-input .mat-select-underline {
+    bottom: 0px;
+    margin-right: 5px !important;
+}
+
+.heRo-input .mat-select-value {
+    bottom: 5px;
+}
+
+.heRo-input.mat-select:focus:not(.mat-select-disabled) .mat-select-underline {
+    height: 2px !important;
+}
+
+.heRo-input.mat-select:focus:not(.mat-select-disabled) .mat-select-placeholder {
+    color: #673ab7 !important;
+}
+
+.heRo-input .mat-select-placeholder {
+    padding-top: 16px !important;
+    top: -12px !important;
+    text-align: left;
+}
+
+.heRo-input .mat-select-placeholder-wrapper {
+    height: 20px !important;
+}
+
+.heRo-input .mat-select-placeholder.mat-floating-placeholder {
+    top: -24px !important;
+}
+
+
+/*****************************************
+** ng2-tag-input
+*****************************************/
+
+.heRo-table-cell label {
+    display: block !important;
+    width: 100% !important;
+    font-size: 12px !important;
+    text-align: left !important;
+}
+
+.heRo-input .ng2-tag-input {
+    font-size: 16px !important;
+    min-height: 20px !important;
+    padding-top: 20px !important;
+    margin-bottom: 14px !important;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+    width: auto !important;
+    overflow: auto !important;
+    border-bottom-color: rgb(0, 0, 0, .12) !important;
+    border-bottom-style: solid !important;
+    border-bottom-width: 1px !important;
+}
+
+.heRo-input .ng2-tag-input input {
+    padding-top: 18px !important;
+    width: 100px !important;
+}
+
+.heRo-input .ng2-tag-input--focused {
+    border-bottom-width: 2px !important;
+    border-bottom-color: #673ab7 !important;
+    margin-bottom: 13px !important;
+}
+
+.heRo-input tag:focus {
+    background: #673ab7 !important;
+}
+
+.heRo-input tag:active {
+    background: #673ab7 !important;
+}
+
+
+/*****************************************
+** heRo-input-bare
+**
+** Class for styling inputs that do not have placeholders/labels
+**
+** Goal is to make consistent styling for input, textarea,
+** md-select, and ng2-tag-input
+** - Inputs should have same height
+** - Inputs shoud have same text-size
+** - Inputs should have underline which highlights when selected
+** - Text inside inputs should be aligned
+** - Underlines should be aligned
+*****************************************/
+
+
+/*****************************************
+** input / textarea
+*****************************************/
+
+.heRo-input-bare input {
+    width: 100% !important;
+    font-size: inherit !important;
+    height: 20px !important;
+    line-height: 16px !important;
+}
+
+md-input-container.heRo-input-bare {
+    font-size: inherit !important;
+    width: 100% !important;
+    margin-bottom: 0px !important;
+}
+
+.heRo-input-bare .mat-input-wrapper {
+    margin-bottom: 0px !important;
+    padding-bottom: 3px !important;
+    margin-top: 9px !important;
+    margin-left: 5px !important;
+    margin-right: 5px !important;
+}
+
+.heRo-input-bare .mat-input-underline {
+    position: relative;
+}
+
+
+/*****************************************
+** heRo-input-centered
+**
+** Center the text within an input
+*****************************************/
+
+.heRo-input-centered input {
+    text-align: center !important;
+}

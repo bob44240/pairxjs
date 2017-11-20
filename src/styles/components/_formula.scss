@@ -1,0 +1,55 @@
+@import '../_vars';
+
+.ace_evalue {
+  display: inline-block;
+  margin-top: 3px;
+  height: 25px;
+  border-radius: 10px;
+  background-color: $color-value-primary;
+  color: white;
+}
+
+.ace_hvalue {
+  display: inline-block;
+  margin-top: 3px;
+  height: 25px;
+  border-radius: 10px;
+  background-color: $color-value-secondary;
+  color: white;
+}
+
+.ace_heemod {
+  display: inline-block;
+  margin-top: 3px;
+  height: 25px;
+  border-radius: 10px;
+  color: white;
+  background-color: $color-heemod;
+}
+
+.ace_group-attr {
+  display: inline-block;
+  margin-top: 3px;
+  height: 25px;
+  border-radius: 10px;
+  color: white;
+  background-color: $color-groupattrib;
+}
+
+.ace_var-input {
+  display: inline-block;
+  margin-top: 3px;
+  height: 25px;
+  border-radius: 10px;
+  color: white;
+  background-color: $color-input;
+}
+
+.ace_table {
+  display: inline-block;
+  margin-top: 3px;
+  height: 25px;
+  border-radius: 10px;
+  background-color: $color-table;
+  color: white;
+}

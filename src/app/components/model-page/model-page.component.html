@@ -1,0 +1,104 @@
+<div style="width:100%;height:100%;">
+  <md-tab-group #tabGroup
+                [disableRipple]="true"
+                [(selectedIndex)]="index"
+                (selectChange)="selectionChange($event)"
+                style="width:100%;height:100%;"
+                class="heRo-nav-tab">
+    <md-tab>
+      <ng-template md-tab-label>
+        <app-tab-label-markup [tabName]="'DECISION'"
+                          [tabImage]="'completed-node-left.svg'"
+                          [tabType]="'left'"
+                          [tabDisabled]="false"
+                          [tabSelect]="true">
+        </app-tab-label-markup>
+      </ng-template>
+      <app-decision-page *ngIf="index === 0 || (_active && visited[0]) ">
+      </app-decision-page>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>
+        <app-tab-label-markup [tabName]="'SETTINGS'"
+                    [tabImage]="'completed-node.svg'"
+                    [tabType]="'middle'"
+                    [tabDisabled]="false">
+        </app-tab-label-markup>
+      </ng-template>
+      <app-wiz-setting-page *ngIf="index === 1 || (_active && visited[1])">
+      </app-wiz-setting-page>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>
+        <app-tab-label-markup [tabName]="'GROUPS'"
+                          [tabImage]="'completed-node.svg'"
+                          [tabType]="'middle'"
+                          [tabDisabled]="true">
+          </app-tab-label-markup>
+        </ng-template>
+      <app-group-page *ngIf="index === 2 || (_active && visited[2])"
+                      [active]="_active && index === 2">
+      </app-group-page>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>
+        <app-tab-label-markup [tabName]="'STATES'"
+                          [tabImage]="'completed-node.svg'"
+                          [tabType]="'middle'"
+                          [tabDisabled]="true">
+          </app-tab-label-markup>
+        </ng-template>
+      <app-state-page *ngIf="index === 3 || (_active && visited[3])"
+                      [active]="_active && index === 3">
+      </app-state-page>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>
+        <app-tab-label-markup [tabName]="'STRATEGIES'"
+                          [tabImage]="'completed-node.svg'"
+                          [tabType]="'middle'"
+                          [tabDisabled]="true">
+        </app-tab-label-markup>
+      </ng-template>
+    <app-strategies-page *ngIf="index === 4 || (_active && visited[4])"
+                         [active]="_active && index === 4">
+    </app-strategies-page>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>
+        <app-tab-label-markup [tabName]="'TRANSITIONS'"
+                          [tabImage]="'completed-node.svg'"
+                          [tabType]="'middle'"
+                          [tabDisabled]="true">
+        </app-tab-label-markup>
+      </ng-template>
+      <app-transitions-page *ngIf="index === 5 || (_active && visited[5])"
+                            [active]="_active && index === 5">
+      </app-transitions-page>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>
+        <app-tab-label-markup [tabName]="'VALUES'"
+                              [tabImage]="'completed-node.svg'"
+                              [tabType]="'middle'"
+                              [tabDisabled]="true">
+        </app-tab-label-markup>
+      </ng-template>
+      <app-values-page *ngIf="index === 6 || (_active && visited[6])"
+                       [active]="_active && index === 6">
+      </app-values-page>
+    </md-tab>
+    <md-tab>
+      <ng-template md-tab-label>
+        <app-tab-label-markup [tabName]="'SUMMARIES'"
+                    [tabImage]="'completed-node-right.svg'"
+                    [tabType]="'right'"
+                    [tabDisabled]="true">
+        </app-tab-label-markup>
+      </ng-template>
+      <app-summaries-page *ngIf="index === 7 || (_active && visited[7])"
+                          [active]="_active && index === 7">
+      </app-summaries-page>
+    </md-tab>
+  </md-tab-group>
+</div>

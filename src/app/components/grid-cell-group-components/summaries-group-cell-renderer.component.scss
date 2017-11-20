@@ -1,0 +1,19 @@
+img {
+  -moz-transition: all .3s;
+  -webkit-transition: all .3s;
+  transition: all .3s;
+}
+
+img:hover {
+  -moz-transform: scale(1.1);
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+.button-commit {
+  background-color: #60BD68;
+}
+
+.button-discard {
+  background-color: #F15854;
+}

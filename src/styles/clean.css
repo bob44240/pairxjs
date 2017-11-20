@@ -1,0 +1,63 @@
+
+/* Reusable flexbox classes */
+.flex-row-container {
+  display: flex;
+  flex-direction: row;
+}
+
+.flex-col-container {
+  display: flex;
+  flex-direction: column;
+}
+
+.flex-item-fixed {
+  flex-grow: 0;
+  flex-shrink: 0;
+}
+
+.flex-item-grow {
+  flex: 1 1 0;
+}
+
+
+/* Styling for the subway map */
+.heRo-nav-tab > md-tab-header.mat-tab-header {
+  margin-bottom: 10px !important;
+}
+.heRo-nav-tab > md-tab-header.mat-tab-header .mat-tab-label {
+  padding: 5px 0px 0px 0px !important;
+  height: 68px !important;
+  width: 100px !important;
+  min-width: 90px !important;
+  line-height: 24px !important;
+}
+.heRo-nav-tab > md-tab-header.mat-tab-header .mat-tab-list {
+  background-color: #233341;
+  color: #ffffff !important;
+  font-weight: normal !important;
+  opacity: 1 !important;
+}
+.heRo-nav-tab > md-tab-header.mat-tab-header .mat-tab-label-container {
+  background-color: #4885ed;
+  color: white !important;
+  opacity: 1 !important;
+}
+.heRo-nav-tab > md-tab-header.mat-tab-header .mat-tab-header-pagination {
+  background-color: #233341;
+  color: white !important;
+  opacity: 1 !important;
+}
+.heRo-nav-tab > md-tab-header.mat-tab-header md-ink-bar {
+  background-color: #233341 !important;
+  opacity: 1 !important;
+}
+.heRo-nav-tab > md-tab-header.mat-tab-header .mat-tab-link {
+  opacity: 1 !important;
+}
+.heRo-nav-tab > md-tab-header.mat-tab-header .mat-select-placeholder {
+  color: rgba(0, 0, 0, .38) !important;
+}
+.heRo-nav-tab > md-tab-header.mat-tab-header .mat-tab-label-active {
+  background-color: #233341 !important;
+  opacity: 1 !important;
+}

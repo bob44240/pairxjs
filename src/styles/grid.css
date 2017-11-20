@@ -1,0 +1,425 @@
+/*****************************************
+Grid system
+*****************************************/
+
+.heRo-col-0 {
+    width: 0% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-1 {
+    width: 4.166667% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-2 {
+    width: 8.333333% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-3 {
+    width: 12.5% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-4 {
+    width: 16.66667% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-5 {
+    width: 20.83333% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-6 {
+    width: 25% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-7 {
+    width: 29.16667% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-7-5 {
+    width: 32.0% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-8 {
+    width: 33.33333% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-9 {
+    width: 37.5% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-10 {
+    width: 41.66667% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-11 {
+    width: 45.83333% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-12 {
+    width: 50% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-13 {
+    width: 54.16667% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-14 {
+    width: 58.33333% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-15 {
+    width: 62.5% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-16 {
+    width: 66.66667% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-17 {
+    width: 70.83333% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-18 {
+    width: 75% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-19 {
+    width: 79.16667% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-20 {
+    width: 83.33333% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-21 {
+    width: 87.5% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-22 {
+    width: 91.66667% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-23 {
+    width: 95.83333% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+.heRo-col-24 {
+    width: 100% !important;
+    display: inline-block;
+    white-space: normal;
+}
+
+
+/*****************************************
+Mobile Grid system
+*****************************************/
+
+@media (max-width: 1000px) {
+    .heRo-mobile-col-0 {
+        width: 0% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-1 {
+        width: 4.166667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-2 {
+        width: 8.333333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-3 {
+        width: 12.5% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-4 {
+        width: 16.66667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-5 {
+        width: 20.83333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-6 {
+        width: 25% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-7 {
+        width: 29.16667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-8 {
+        width: 33.33333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-9 {
+        width: 37.5% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-10 {
+        width: 41.66667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-11 {
+        width: 45.83333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-12 {
+        width: 50% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-13 {
+        width: 54.16667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-14 {
+        width: 58.33333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-15 {
+        width: 62.5% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-16 {
+        width: 66.66667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-17 {
+        width: 70.83333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-18 {
+        width: 75% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-19 {
+        width: 79.16667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-20 {
+        width: 83.33333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-21 {
+        width: 87.5% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-22 {
+        width: 91.66667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-23 {
+        width: 95.83333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-mobile-col-24 {
+        width: 100% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+}
+
+
+/*****************************************
+Desktop Grid system
+*****************************************/
+
+@media (min-width: 1001px) {
+    .heRo-desktop-col-0 {
+        width: 0% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-1 {
+        width: 4.166667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-2 {
+        width: 8.333333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-3 {
+        width: 12.5% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-4 {
+        width: 16.66667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-5 {
+        width: 20.83333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-6 {
+        width: 25% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-7 {
+        width: 29.16667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-8 {
+        width: 33.33333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-9 {
+        width: 37.5% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-10 {
+        width: 41.66667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-11 {
+        width: 45.83333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-12 {
+        width: 50% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-13 {
+        width: 54.16667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-14 {
+        width: 58.33333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-15 {
+        width: 62.5% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-16 {
+        width: 66.66667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-17 {
+        width: 70.83333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-18 {
+        width: 75% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-19 {
+        width: 79.16667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-20 {
+        width: 83.33333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-21 {
+        width: 87.5% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-22 {
+        width: 91.66667% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-23 {
+        width: 95.83333% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+    .heRo-desktop-col-24 {
+        width: 100% !important;
+        display: inline-block;
+        white-space: normal;
+    }
+}

@@ -1,0 +1,36 @@
+@import '~styles/global.scss';
+
+.icon-foreground-active {
+  fill: #ffff8d !important;
+}
+
+.icon-foreground {
+  fill: #bec1c5;
+}
+
+.icon-background {
+  fill: none;
+}
+
+.app-wizard-sidenav {
+  background-color: mat-color($md-primary, 500);
+  align-items: center;
+  width: 48px;
+  height: calc(100vh - 100px);
+  padding: 12px 0;
+  justify-content: space-around;
+  height: 100%;
+  max-height: 100%;
+
+  a {
+    display: block;
+    width: 36px;
+    height: 36px;
+    cursor: pointer;
+  }
+
+  img {
+    width: 100%;
+    height: 100%;
+  }
+}

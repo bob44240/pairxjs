@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="66.145828mm"
+   height="4.2350512mm"
+   viewBox="0 0 66.145828 4.2350512"
+   version="1.1"
+   id="svg3761"
+   inkscape:version="0.92.1 r15371"
+   sodipodi:docname="completed-node.svg">
+  <defs
+     id="defs3755" />
+  <sodipodi:namedview
+     id="base"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageopacity="0.0"
+     inkscape:pageshadow="2"
+     inkscape:zoom="0.76435185"
+     inkscape:cx="-28.149619"
+     inkscape:cy="218.26639"
+     inkscape:document-units="mm"
+     inkscape:current-layer="layer1"
+     showgrid="true"
+     showguides="false"
+     inkscape:window-width="1920"
+     inkscape:window-height="1051"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1">
+    <inkscape:grid
+       type="xygrid"
+       id="grid3786"
+       originx="-112.44792"
+       originy="-90.750353" />
+  </sodipodi:namedview>
+  <metadata
+     id="metadata3758">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-112.44792,-202.0146)">
+    <path
+       style="stroke:#0099ff;stroke-width:0.44841796px"
+       inkscape:connector-curvature="0"
+       d="M 178.59375,204.13126 H 112.44792"
+       class="cls-6"
+       id="Line_GroupsComplete" />
+    <path
+       style="fill:#ffff8d;stroke:#0099ff;stroke-width:0.52916664px"
+       inkscape:connector-curvature="0"
+       d="m 145.74573,202.27918 a 1.8520833,1.8520833 0 1 1 -1.85208,1.85208 1.8520833,1.8520833 0 0 1 1.85208,-1.85208 z"
+       class="cls-9"
+       data-name="Dot_incomplete"
+       id="Dot_incomplete-21" />
+  </g>
+</svg>

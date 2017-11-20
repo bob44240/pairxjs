@@ -1,0 +1,39 @@
+<!--<img *ngIf='!doedit' src="/assets/row-add.svg" alt="add a new row" style="cursor:pointer;margin:0px 4px 15px 0px;" (click)="addrow()" title="add a row at the end of the group..." height="22px" width="auto">-->
+
+<span *ngIf='!doedit' title="cllick to edit group name, label and wpt..." class="datatype datatype-pill datatype-summary-primary" (click)=edittext()>
+  {{group}}
+</span>
+
+<span *ngIf='!doedit' title="cllick to edit group name, label and wpt..." class="heRo-ag-grid-summaries-group-label" (click)=edittext()>
+  {{label}}
+</span>
+
+<span *ngIf='!doedit' title="cllick to edit group name, label and wpt..." class="heRo-ag-grid-summaries-group-label" (click)=edittext()>
+  {{wpt}}
+</span>
+
+<button md-button *ngIf="!doedit" (click)="addrow()" class="" color="accent" alt="Add Row" title="Add Row">
+  <md-icon>add</md-icon>
+  Add Row
+</button>
+
+<button md-mini-fab *ngIf="doedit" (click)="saveedit()" class="button-commit" alt="Commit" title="Commit changes">
+  <md-icon>check</md-icon>
+</button>
+<button md-mini-fab *ngIf="doedit" (click)="canceledit()" class="button-discard" alt="Discard" title="Discard changes">
+  <md-icon>clear</md-icon>
+</button>
+
+<!--<img *ngIf='doedit' src="/assets/save-edit.svg" alt="save text edits" style="cursor:pointer;margin:0px 0px 24px 0px;" (click)="saveedit()" title="save the text edits..." height="28px" width="auto">-->
+<!--
+<img *ngIf='doedit' src="/assets/cancel-edit.svg" alt="cancel text edit" style="cursor:pointer;margin:0px 10px 24px 4px;" (click)="canceledit()" title="cancel the edit operation..." height="28px" width="auto">
+-->
+<md-input-container *ngIf='doedit' class="heRo-input" style="color:#8064A1;font-weight:bold;width:200px !important;vertical-align:super;">
+	<input mdInput required type="text" placeholder=" group name" [(ngModel)]="nameedit" (blur)="nameChange($event)">
+</md-input-container>
+<md-input-container *ngIf='doedit' class="heRo-input" style="color:#8064A1;font-weight:bold;width:400px !important;vertical-align:super;">
+	<input mdInput required type="text" placeholder=" group label" [(ngModel)]="labeledit" (blur)="labelChange($event)">
+</md-input-container>
+<md-input-container *ngIf='doedit' class="heRo-input" style="color:#8064A1;font-weight:bold;width:100px !important;vertical-align:super;">
+	<input mdInput required type="text" placeholder=" wpt" [(ngModel)]="wptedit" (blur)="wptChange($event)">
+</md-input-container>

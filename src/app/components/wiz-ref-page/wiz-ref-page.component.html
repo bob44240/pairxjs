@@ -1,0 +1,43 @@
+<md-tab-group class="graphTabs" #tabGroup [(selectedIndex)]="selectedTab">
+  <md-tab label="TRACE">
+    <app-dv-trace [active]="selectedTab==0 && _activeTab"  ></app-dv-trace>
+  </md-tab>
+
+  <md-tab label="OUTCOMES">
+    <!--<app-dv-trace></app-dv-trace>-->
+    <app-dv-bar-chart [active]="selectedTab==1 && _activeTab" ></app-dv-bar-chart>
+  </md-tab>
+
+  <md-tab label="COST">
+<<<<<<< HEAD
+    <app-dv-bar-chart [active]="selectedTab==2 && _activeTab" ></app-dv-bar-chart>
+  </md-tab>
+
+  <md-tab label="NMB">
+    <app-dv-bar-chart [active]="selectedTab==3 && _activeTab" ></app-dv-bar-chart>
+  </md-tab>
+
+  <md-tab label="CE">
+    <app-dv-bar-chart [active]="selectedTab==4 && _activeTab" ></app-dv-bar-chart>
+  </md-tab>
+
+  <md-tab label="VBP">
+    <app-dv-bar-chart [active]="selectedTab==5 && _activeTab" ></app-dv-bar-chart>
+=======
+    <app-dv-cost [active]="selectedTab==2" ></app-dv-cost>
+  </md-tab>
+
+  <md-tab label="NMB">
+    <app-dv-nmb [active]="selectedTab==3" ></app-dv-nmb>
+  </md-tab>
+
+  <md-tab label="CE">
+    <app-dv-ce [active]="selectedTab==4" ></app-dv-ce>
+  </md-tab>
+
+  <md-tab label="VBP">
+    <app-dv-vbp [active]="selectedTab==5" ></app-dv-vbp>
+>>>>>>> origin/ng4-dev
+  </md-tab>
+</md-tab-group>
+

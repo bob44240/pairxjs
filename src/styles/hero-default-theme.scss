@@ -1,0 +1,16 @@
+@import 'vars';
+
+// Import custom palette override;
+@import 'md-palette'; // mat-palette accepts $palette-name, main, lighter and darker variants
+$hero-default-theme-primary: mat-palette($md-primary, 700, 300, 900);
+$hero-default-theme-accent: mat-palette($md-accent);
+$hero-default-theme-warn: mat-palette($md-warn, A200); // create theme (use mat-dark-theme for themes with dark backgrounds)
+$hero-default-theme: mat-light-theme( $hero-default-theme-primary, $hero-default-theme-accent, $hero-default-theme-warn ); // Custom Overrides
+@import 'colors';
+@import 'typography';
+@import 'elements';
+@import 'assist'; // Components
+@import 'components/toolbar';
+@import 'components/tabs';
+@import 'components/ag-grid';
+@import 'components/inline-tabs';

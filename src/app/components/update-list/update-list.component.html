@@ -1,0 +1,13 @@
+<div style="margin: 10px; border: 1px solid blue">
+
+    <div *ngFor = 'let item of updates' style="font-size: 18px; font-weight: bold">
+      *{{item.title}} {{item.date}}
+      <ul>
+      <li *ngFor = 'let bullet of item.bulletPoints'>
+        {{bullet}}
+      </li>
+      </ul>
+      <hr>
+    </div>
+
+</div>

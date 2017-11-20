@@ -1,0 +1,33 @@
+@import '~styles/global';
+
+.container {
+  display: table;
+  width: 100%;
+  margin-bottom: 1em;
+}
+
+.row {
+  display: table-row;
+
+  > div {
+    display: table-cell;
+  }
+}
+
+.modal-control {
+  display: flex;
+  justify-content: flex-end;
+}
+
+button {
+  text-transform: uppercase;
+}
+
+.accent {
+  color: mat-color($md-accent, 500);
+}
+
+input {
+  border: 0;
+  color: #fff; //TODO theme-ize this
+}

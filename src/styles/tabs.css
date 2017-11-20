@@ -1,0 +1,52 @@
+/*****************************************
+** First-level tabs
+** - Blue background
+** - White text
+** - Red underline for active
+*****************************************/
+
+
+/*****************************************
+** Second-level tabs
+** - Grey inactive background
+** - Grey inactive background
+** - White active background
+** - Black text
+** - Red underline for active
+*****************************************/
+
+.heRo-card-tab-group .mat-tab-label {
+    color: black !important;
+    height: 48px !important;
+}
+
+.heRo-card-tab-group md-ink-bar {
+    background-color: #db3236 !important;
+    opacity: 1 !important;
+}
+
+.heRo-card-tab-group .mat-tab-header-pagination {
+    background-color: #eeeeee;
+    color: black !important;
+    opacity: 1 !important;
+}
+
+.heRo-nav-tab .mat-tab-label-container {
+    background-color: #eeeeee !important;
+}
+
+.heRo-card-tab-group .mat-tab-label-active {
+    background-color: white !important;
+    color: #db3236 !important;
+}
+
+.mat-tab-label {
+    opacity: 1 ;
+    color: white;
+}
+
+.heRo-card-tab-group .mat-tab-list {
+    background-color: #eeeeee !important;
+    /*background-color: white !important;*/
+    color: black !important;
+}

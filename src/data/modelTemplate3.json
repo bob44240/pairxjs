@@ -1,0 +1,404 @@
+{
+  "statestatus": {
+    "isDirty": false
+  },
+  "modelheader": {
+    "filename": "modelTemplate3.json",
+    "author": "John Brown",
+    "description": "This is our original model template.",
+    "creatDate": "11/30/2017",
+    "updateDate": "11/30/2017"
+  },
+  "decision": {
+    "ModelType": "how"
+  },
+  "settings": {
+    "Country": "United States",
+    "Language": "english",
+    "DiscountRateOutcomes": 3,
+    "DiscountRateCosts": 5,
+    "ModelTimeframe": 20,
+    "ModelTimeframeUnits": "years",
+    "CycleLength": 1,
+    "CycleLengthUnits": "months",
+    "CycleCount": 0
+  },
+  "groupinfo": {
+    "PopulationType": "heterogeneous"
+  },
+  "groups": [
+    {
+      "id": "1",
+      "on_off": "On",
+      "name": "M_L35",
+      "label": "Men, age 0-35",
+      "start_age": 27,
+      "weight_kg": 83,
+      "wt": 0.2
+    },
+    {
+      "id": "2",
+      "on_off": "On",
+      "name": "M_GE35",
+      "label": "Men, age 0-35+",
+      "start_age": 42,
+      "weight_kg": 81,
+      "wt": 0.25
+    },
+    {
+      "id": "3",
+      "on_off": "Off",
+      "name": "W_L35",
+      "label": "Women, age 0-35",
+      "start_age": 30,
+      "weight_kg": 72,
+      "wt": 0.3
+    },
+    {
+      "id": "4",
+      "on_off": "On",
+      "name": "W_GE35",
+      "label": "Women, age 0-35+",
+      "start_age": 44,
+      "weight_kg": 70,
+      "wt": 0.25
+    }
+  ],
+  "strategieswho": [
+    {
+      "id": "1",
+      "on_off": "On",
+      "name": "STRAT1",
+      "label": "Strategy 1 Description",
+      "groups": "G_M40-44Y"
+    },
+    {
+      "id": "2",
+      "on_off": "On",
+      "name": "STRAT2",
+      "label": "Strategy 2 Description",
+      "groups": "G_M40-44Y, G_W40-44Y"
+    },
+    {
+      "id": "3",
+      "on_off": "On",
+      "name": "STRAT3",
+      "label": "Strategy 3 Description",
+      "groups": "G_W40-44Y, G_W45-44Y"
+    },
+    {
+      "id": "4",
+      "on_off": "On",
+      "name": "STRAT4",
+      "label": "Strategy 4 Description",
+      "groups": "G_M40-44Y, G_M45-44Y, G_W45-44Y, G_W45-49Y"
+    }
+  ],
+  "strategieshow": [
+    {
+      "id": "1",
+      "on_off": "On",
+      "name": "IMMUN",
+      "label": "Immunotherapy"
+    },
+    {
+      "id": "2",
+      "on_off": "On",
+      "name": "TARGET",
+      "label": "Targeted therapy"
+    },
+    {
+      "id": "3",
+      "on_off": "On",
+      "name": "CHEMO",
+      "label": "Chemotherapy"
+    }
+  ],
+  "transitions": [
+    {
+      "id": "1",
+      "strategy": "IMMUN",
+      "from": "RF",
+      "to": "REL",
+      "formula": "y <- quote(read.csv(\"important.csv\", row.names = FALSE))"
+    },
+    {
+      "id": "2",
+      "strategy": "IMMUN",
+      "from": "RF",
+      "to": "DEAD",
+      "formula": "environment(as.formula(\"y ~ x\", env = new.env()))"
+    },
+    {
+      "id": "3",
+      "strategy": "IMMUN",
+      "from": "RF",
+      "to": "REL",
+      "formula": "sum((x-mean(x))^2)/(length(x)-1)"
+    },
+    {
+      "id": "4",
+      "strategy": "TARGET",
+      "from": "RF",
+      "to": "REL",
+      "formula": "names(fruit) <- c(\"orange\", \"banana\", \"apple\", \"peach\")"
+    },
+    {
+      "id": "5",
+      "strategy": "TARGET",
+      "from": "RF",
+      "to": "DEAD",
+      "formula": "y <- quote(read.csv(\"important.csv\", row.names = FALSE))"
+    },
+    {
+      "id": "6",
+      "strategy": "TARGET",
+      "from": "RF",
+      "to": "RF",
+      "formula": "environment(as.formula(\"y ~ x\", env = new.env()))"
+    },
+    {
+      "id": "7",
+      "strategy": "CHEMO",
+      "from": "RF",
+      "to": "REL",
+      "formula": "sum((x-mean(x))^2)/(length(x)-1)"
+    },
+    {
+      "id": "8",
+      "strategy": "CHEMO",
+      "from": "RF",
+      "to": "DEAD",
+      "formula": "names(fruit) <- c(\"orange\", \"banana\", \"apple\", \"peach\")"
+    }
+  ],
+  "states": [
+    {
+      "id": "1",
+      "name": "RF",
+      "label": "Relapse-free",
+      "initial_probability": "100"
+    },
+    {
+      "id": "2",
+      "name": "REL",
+      "label": "Post-relapse",
+      "initial_probability": "0"
+    },
+    {
+      "id": "3",
+      "name": "DEAD",
+      "label": "Dead",
+      "initial_probability": "0"
+    }
+  ],
+  "formulas": [
+    {
+      "id": "1",
+      "name": "CHEMO_REL",
+      "description": "Probability of relapse, chemotherapy ",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "y <- quote(read.csv(\"important.csv\", row.names = FALSE))"
+    },
+    {
+      "id": "2",
+      "name": "IMMUN_RR",
+      "description": "Relative risk relapse, immunotherapy vs...",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "environment(as.formula(\"y ~ x\", env = new.env()))"
+    },
+    {
+      "id": "3",
+      "name": "TARGET_RR",
+      "description": "Relative risk of relapse, targeted therapy vs...",
+      "category": "Effectiveness",
+      "on_off": "Off",
+      "formula": "sum((x-mean(x))^2)/(length(x)-1)"
+    },
+    {
+      "id": "4",
+      "name": "RF_MORT",
+      "description": "Probability of death, relapse free",
+      "category": "Effectiveness",
+      "on_off": "On",
+      "formula": "names(fruit) <- c(\"orange\", \"banana\", \"apple\", \"peach\")"
+    }
+  ],
+  "values_health": [
+    {
+      "id": "1",
+      "name": "FEBN",
+      "label": "Cases of febrile neutropenia",
+      "strategy": "IMMUN",
+      "state": "RF",
+      "formula": "names(fruit) <- c(\"orange\", \"banana\", \"apple\", \"peach\")"
+    },
+    {
+      "id": "2",
+      "name": "FEBN",
+      "label": "",
+      "strategy": "TARGET",
+      "state": "RF",
+      "formula": "y <- quote(read.csv(\"important.csv\", row.names = FALSE))"
+    },
+    {
+      "id": "3",
+      "name": "FEBN",
+      "label": "",
+      "strategy": "CHEMO",
+      "state": "RF",
+      "formula": "environment(as.formula(\"y ~ x\", env = new.env()))"
+    },
+    {
+      "id": "4",
+      "name": "LY_RF",
+      "label": "Relapse-free LYs",
+      "strategy": "All",
+      "state": "RF",
+      "formula": "sum((x-mean(x))^2)/(length(x)-1)"
+    },
+    {
+      "id": "5",
+      "name": "LY_REL",
+      "label": "Post-relapse LYs",
+      "strategy": "All",
+      "state": "REL",
+      "formula": "y <- quote(read.csv(\"important.csv\", row.names = FALSE))"
+    },
+    {
+      "id": "6",
+      "name": "QALY_RF",
+      "label": "Post-relapse LYs",
+      "strategy": "All",
+      "state": "RF",
+      "formula": "names(fruit) <- c(\"orange\", \"banana\", \"apple\", \"peach\")"
+    }
+  ],
+  "values_economic": [
+    {
+      "id": "1",
+      "name": "COST_MED",
+      "label": "Cost of medication",
+      "strategy": "IMMUN",
+      "state": "RF",
+      "formula": "y <- quote(read.csv(\"important.csv\", row.names = FALSE))"
+    },
+    {
+      "id": "2",
+      "name": "COST_MED",
+      "label": "",
+      "strategy": "TARGET",
+      "state": "RF",
+      "formula": "environment(as.formula(\"y ~ x\", env = new.env()))"
+    },
+    {
+      "id": "3",
+      "name": "COST_MED",
+      "label": "",
+      "strategy": "CHEMO",
+      "state": "RF",
+      "formula": "sum((x-mean(x))^2)/(length(x)-1)"
+    },
+    {
+      "id": "4",
+      "name": "COST_FEBN",
+      "label": "Cost of febrile neutropenia",
+      "strategy": "All",
+      "state": "RF",
+      "formula": "environment(as.formula(\"y ~ x\", env = new.env()))"
+    },
+    {
+      "id": "5",
+      "name": "COST_TERM",
+      "label": "Cost of terminal care",
+      "strategy": "All",
+      "state": "RF -> DEAD",
+      "formula": "names(fruit) <- c(\"orange\", \"banana\", \"apple\", \"peach\")"
+    },
+    {
+      "id": "6",
+      "name": "COST_TERM",
+      "label": "",
+      "strategy": "All",
+      "state": "RF -> DEAD",
+      "formula": "y <- quote(read.csv(\"important.csv\", row.names = FALSE))"
+    }
+  ],
+  "summaries_health": [
+    {
+      "id": "1",
+      "on_off": "On",
+      "outcome": "LYS",
+      "label1": "Life Years",
+      "wpt": "$100,000",
+      "value": "FEBN",
+      "label2": "Relapse-Free Life Years"
+    },
+    {
+      "id": "2",
+      "on_off": "On",
+      "outcome": "LYS",
+      "label1": "",
+      "wpt": "",
+      "value": "FEBN",
+      "label2": "Post-Relapse Life Years"
+    },
+    {
+      "id": "3",
+      "on_off": "On",
+      "outcome": "QALYS",
+      "label1": "QALYs",
+      "wpt": "$150,000",
+      "value": "LY_RF",
+      "label2": "Relapse-Free QALYs"
+    },
+    {
+      "id": "4",
+      "on_off": "On",
+      "outcome": "QALYS",
+      "label1": "",
+      "wpt": "",
+      "value": "LY_REL",
+      "label2": "Post-Relapse QALYs"
+    },
+    {
+      "id": "5",
+      "on_off": "On",
+      "outcome": "QALYS",
+      "label1": "",
+      "wpt": "",
+      "value": "QALY_RF",
+      "label2": "Febrile Neutropenia QALYs"
+    }
+  ],
+  "summaries_economic": [
+    {
+      "id": "1",
+      "on_off": "On",
+      "outcome": "COSTS",
+      "label1": "Cost",
+      "value": "COST_MED",
+      "label2": "Cost of Medication"
+    },
+    {
+      "id": "2",
+      "on_off": "On",
+      "outcome": "COSTS",
+      "label1": "",
+      "value": "COST_FEBN",
+      "label2": "Cost of Febrile Neutropenia"
+    },
+    {
+      "id": "3",
+      "on_off": "On",
+      "outcome": "COSTS",
+      "label1": "",
+      "value": "COST_TERM",
+      "label2": "Cost of Terminal Care"
+    }
+  ],
+  "tables": [],
+  "scripts": []
+}

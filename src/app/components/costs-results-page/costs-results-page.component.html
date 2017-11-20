@@ -1,0 +1,154 @@
+<div style="height: 100%; width: 100%;">
+  <md-toolbar class="graphToolBar">
+      <div (click)="setDisplayMode(0)" [ngClass]="{'mode-active': modeIndex === 0 }"
+          style="cursor: pointer; height: 100%; display: inline-block;">
+        <div class="toolbar-item" style="display: inline-block; margin-top: 10px;">
+          <img src="/assets/icon-tabular-inactive.svg" height="30px" width="30px"
+              style="vertical-align: middle;" *ngIf="modeIndex !== 0">
+          <img src="/assets/icon-tabular-active.svg" height="30px" width="30px"
+              style="vertical-align: middle;" *ngIf="modeIndex === 0">
+          <div class="graphTypeLabels" style="vertical-align: middle; display: inline-block;">Tabular</div>
+        </div>
+      </div>
+      <div (click)="setDisplayMode(1)" [ngClass]="{'mode-active': modeIndex === 1 }"
+          style="cursor: pointer; height: 100%; display: inline-block;">
+        <div class="toolbar-item" style="display: inline-block; margin-top: 10px;">
+          <img src="/assets/icon-bar-inactive.svg" height="30px" width="30px"
+              style="vertical-align: middle;" *ngIf="modeIndex !== 1">
+          <img src="/assets/icon-bar-active.svg" height="30px" width="30px"
+              style="vertical-align: middle;" *ngIf="modeIndex === 1">
+          <div class="graphTypeLabels" style="vertical-align: middle; display: inline-block;">Bar</div>
+        </div>
+      </div>
+      <div (click)="setDisplayMode(2)" [ngClass]="{'mode-active': modeIndex === 2 }"
+          style="cursor: pointer; height: 100%; display: inline-block;">
+        <div class="toolbar-item" style="display: inline-block; margin-top: 10px;">
+          <img src="/assets/icon-waterfall-inactive.svg" height="30px" width="30px"
+              style="vertical-align: middle;" *ngIf="modeIndex !== 2">
+          <img src="/assets/icon-waterfall-active.svg" height="30px" width="30px"
+              style="vertical-align: middle;" *ngIf="modeIndex === 2">
+          <div class="graphTypeLabels" style="vertical-align: middle; display: inline-block;">Waterfall</div>
+        </div>
+      </div>
+    </md-toolbar>
+    <div #chartGrandparent style="height: 100%;">
+      <app-results-sidebar #sidebar (onOpen)="onSidebarToggle()"
+                                    (onOpenFinish)="this.draw(0,0)"
+                                    style="height: 100%;">
+        <div main-panel style="height: 100%; width: 100%">
+          <div class="flex-col-container" style="height: 100%; width: 100%;">
+            <div class="flex-item-fixed" style="padding-left: 20px; width: 100%;
+                                                height: 60px;">
+              <span style="float: left;">
+                <h3>{{title}}</h3>
+              </span>
+              <span *ngIf="!this.sidebar.open" (click)="openSidenav()"
+                    style="float: right; cursor:pointer;">
+                <label style="margin-bottom: 15px;">Show Options</label>
+                <img src="/assets/icon-settings-graph.svg" height="30px" width="30px">
+              </span>
+            </div>
+            <div class="flex-item-grow" style="width: 100%;">
+              <div #chartParent (window:resize)="onResize()"
+                                style="height: 100%; width: 100%"
+                                class="hero-chart-container">
+                <ag-grid-angular style="width: 100%; height: 500px;"
+                                 class="ag-theme-material"
+                                 #tableGrid *ngIf="modeIndex===0"
+                                 [gridOptions]='gridOptions'
+                                 [suppressContextMenu]="true">
+                </ag-grid-angular>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div side-panel class="side-panel" style="height: 100%; width: 100%">
+          <div style="width: 100%">
+            <h4>Sorting</h4>
+            <div class="hero-filter-group" *ngIf="modeIndex !== 0">
+              <div class="filter-label">
+                <label>Sort Order:</label>
+              </div>
+              <div class="filter-input">
+                <md-select [(ngModel)]="sort" (change)="draw(1000, 500)"
+                          style="width: 100%;">
+                  <md-option *ngFor="let sortOption of sortOptions; let i = index;"
+                            [value]="sortOption?.value">{{sortOption?.label}}</md-option>
+                </md-select>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div style="width: 100%">
+            <h4>Filters</h4>
+            <div class="hero-filter-group">
+              <div class="filter-label">
+                <label>Outcome:</label>
+              </div>
+              <div class="filter-input">
+                <md-select [(ngModel)]="outcomesFilter" (change)="draw(1000, 500)"
+                          style="width: 100%;">
+                  <md-option *ngFor="let outcome of this.outcomes; let i = index;"
+                            [value]="outcome">{{outcome}}</md-option>
+                </md-select>
+              </div>
+            </div>
+            <div class="hero-filter-group">
+              <div class="filter-label">
+                <label>Discounting:</label>
+              </div>
+              <div class="filter-input">
+                <md-select [(ngModel)]="discounting" (change)="draw(1000, 500)"
+                          style="width: 100%;">
+                  <md-option [value]="true">Discounted</md-option>
+                  <md-option [value]="false">Undiscounted</md-option>
+                </md-select>
+              </div>
+            </div>
+            <div class="hero-filter-group" *ngIf="modeIndex !== 0">
+              <div class="filter-label">
+                <label>Type:</label>
+              </div>
+              <div class="filter-input">
+                <md-select [(ngModel)]="seriesType" (change)="draw(1000, 500)"
+                            style="width: 100%;">
+                  <md-option [value]="'Absolute'">Absolute</md-option>
+                  <md-option [value]="'Difference'">Difference</md-option>
+                </md-select>
+              </div>
+            </div>
+            <div class="hero-filter-group" *ngIf="seriesType === 'Difference' || modeIndex === 0">
+              <div class="filter-label">
+                <label>Referent:</label>
+              </div>
+              <div class="filter-input">
+                <md-select [(ngModel)]="referent" (change)="draw(1000, 500)"
+                          style="width: 100%;">
+                  <md-option *ngFor="let strategy of this.strategies; let i = index;"
+                            [value]="strategy">{{strategy}}</md-option>
+                </md-select>
+              </div>
+            </div>
+            <div class="hero-filter-group">
+              <div class="filter-label">
+                <label *ngIf="(seriesType === 'Absolute') && (modeIndex !== 0)">Strategy:</label>
+                <label *ngIf="(seriesType === 'Difference') && (modeIndex === 0)">Comparators:</label>
+              </div>
+              <div class="filter-input">
+                <div *ngFor="let strategy of this.strategies; let i = index;">
+                  <div class="filter-input" *ngIf="strategy !== referent || (seriesType === 'Absolute' && modeIndex !== 0)">
+                    <md-checkbox [(ngModel)]="seriesFilter[i]" (change)="draw(1000, 500)">{{strategy}}</md-checkbox>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr>
+          <div>
+            <h4>User Override Values</h4>
+            <app-bc-override-values></app-bc-override-values>
+          </div>
+        </div>
+      </app-results-sidebar>
+    </div>
+</div>

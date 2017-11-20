@@ -1,0 +1,448 @@
+/* Imports */
+
+/*@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';*/
+
+/*******************
+* Body
+*
+* Menu bar should be full-width, so no margin or padding. Grey
+* background color to make cards stand out a bit more from
+* background.
+*
+******************/
+
+html,body {
+    height:100%;
+}
+
+body {
+    padding: 0px;
+    margin: 0px;
+    background-color: #dedede !important;
+}
+
+
+/* Menu Bar + Branding */
+
+.heRo-filler {
+    flex: 1 1 auto;
+}
+
+
+/*******************
+* Branding
+*
+* These colors are used to format heRo brand text in the menu
+* bar and elsewhere in the app
+*
+******************/
+
+.hero-h {
+    color: #c0504d !important;
+}
+
+.hero-e {
+    color: #9bba58 !important;
+}
+
+.hero-r {
+    color: #4bacc6 !important;
+}
+
+.hero-o {
+    color: #8064a1 !important;
+}
+
+.hero-oncology {
+    color: #E4D47A !important;
+    font-size: 16pt !important;
+}
+
+
+/*******************
+* Menu Bar
+*
+* Used to format application menu bar
+*
+******************/
+
+.heRo-main-toolbar {
+    background-color: white;
+    color: black !important;
+    border-bottom: 1px solid #cccccc;
+    height: 48px !important;
+    min-height: 48px !important;
+}
+
+md-toolbar-row {
+    /*background-color: white;
+  color: black !important;*/
+    height: 48px !important;
+    min-height: 48px !important;
+}
+
+.toolbar-text {
+    font-size: 16px;
+    color: black !important;
+}
+
+
+/* Cards */
+
+md-card-content {
+    margin-bottom: 0 !important;
+    padding-bottom: 0 !important;
+}
+
+md-card-header {
+    padding: 0px;
+    margin: 0px;
+}
+
+md-toolbar {
+    margin: 0px;
+}
+
+.heRo-card-toolbar {
+    background-color: #efefef;
+    color: black;
+}
+
+.heRo-card-content {
+    margin: 0px !important;
+    padding: 0px !important;
+}
+
+
+/* Card Tables */
+
+.heRo-table {
+    width: 100%;
+    color: #666666;
+    font-size: 14px !important;
+}
+
+.heRo-table-row {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    min-height: 40px;
+    align-items: center;
+    border-bottom: 1px solid #cccccc;
+    border-collapse: collapse;
+}
+
+.heRo-table-sub-row {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    min-height: 40px;
+    align-items: center;
+    border-bottom: 1px solid #cccccc;
+}
+
+.heRo-table-borderless {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    min-height: 40px;
+    align-items: center;
+}
+
+.handle-left {
+    padding-left: 10px;
+}
+
+.handle-right {
+    padding-right: 10px;
+}
+
+.heRo-table-sub-row:last-child {
+    border-bottom: 0 none #cccccc;
+}
+
+.heRo-table-sub-row:only-child {
+    border-bottom: 0 none #cccccc;
+}
+
+.heRo-table-header-row {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    min-height: 45px;
+    width: 100%;
+    font-weight: bold;
+    align-items: center;
+    border-bottom: 1px solid #cccccc;
+}
+
+.heRo-table-cell {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.heRo-table-cell-left {
+    text-align: left;
+    vertical-align: middle;
+}
+
+.heRo-table-header {
+    text-align: center;
+    vertical-align: middle;
+}
+
+.heRo-table-form {
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display: flex;
+    overflow: hidden;
+    width: 100%;
+    align-items: center;
+}
+
+.heRo-expand {
+    flex: 1 1 auto;
+}
+
+.heRo-fixed {
+    flex-grow: 0;
+    flex-shrink: 0;
+}
+
+
+/* Select Inputs
+.heRo-table .mat-select-trigger {
+  color: inherit !important;
+  min-width: 0px !important;
+  font-size: inherit !important;
+}
+.heRo-table .mat-select-value {
+  color: inherit !important;
+  width: 100% !important;
+  max-width: 100% !important;
+  font-size: inherit !important;
+}
+.heRo-table .mat-select-value-text {
+  width: 100% !important;
+  max-width: 100% !important;
+  color: inherit !important;
+  text-align: center !important;
+  font-size: inherit !important;
+}
+
+.heRo-table md-option {
+  color: inherit !important;
+  text-align: center !important;
+  font-size: inherit !important;
+}*/
+
+
+/*****************************************
+Flex layout
+*****************************************/
+
+.heRo-flex-row {
+    flex: auto;
+    display: -webkit-flex;
+    display: flex;
+    flex-shrink: 0 !important;
+    /* You can set flex-wrap and flex-direction individually */
+    -webkit-flex-direction: row;
+    flex-direction: row;
+    -webkit-flex-wrap: wrap;
+    flex-wrap: wrap;
+    /* Or do it all in one line with flex flow */
+    -webkit-flex-flow: row wrap;
+    flex-flow: row wrap;
+    white-space: nowrap;
+}
+
+.heRo-flex-shrink-row {
+    display: flex;
+    flex-direction: row;
+    align-items: stretch;
+    width: 100%;
+    white-space: nowrap;
+}
+
+
+/*****************************************
+Inputs w/o placeholders outside of tables
+
+These inputs need to be formatted without
+the padding usually reserved for the
+placeholder text.
+*****************************************/
+
+
+/*.heRo-table input {
+  text-align: center !important;
+}*/
+
+
+/*md-input-container.heRo-input-bare {
+  width: 100% !important;
+  padding-bottom: 0px;
+  margin-bottom: 3px;
+}
+md-input-container.heRo-input-bare .mat-input-wrapper {
+  margin: 0px;
+  height: 16px;
+  padding-bottom: 0px;
+  margin-bottom: 3px;
+  width: 100% !important;
+}
+md-select.heRo-input-bare {
+  padding-top: 0px;
+  padding-bottom: 0px;
+  margin-bottom: 3px;
+  width: 100% !important;
+}
+md-slider.heRo-input-bare {
+  width: 100% !important;
+  padding-bottom: 0px;
+  margin-bottom: 3px;
+}*/
+
+
+/*****************************************
+Inputs with placeholders outside of tables
+
+These inputs need to be formatted with
+the padding reserved for the placeholder
+text.
+*****************************************/
+
+
+/* Inputs */
+
+
+/* Card within card */
+
+md-card .heRo-card {
+    margin: 0 !important;
+    box-shadow: none;
+    border-bottom: 1px solid #cccccc;
+    padding: 0 !important;
+}
+
+.heRo-full-width {
+    width: 100%;
+}
+
+.heRo-card md-card-title {
+    font-size: 16px;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin: 0px !important;
+}
+
+.heRo-card md-card-actions {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin: 0px;
+    background: white;
+}
+
+.heRo-card md-card-subtitle {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin: 0px;
+    background: white;
+}
+
+.heRo-card md-card-content {
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-top: 7px;
+    padding-bottom: 7px;
+    margin: 0px;
+    background: white;
+}
+
+.heRo-card-top-right {
+    color: black;
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+.handle {
+    cursor: grab;
+    text-align: center;
+    vertical-align: middle;
+    padding-top: 2px;
+    padding-right: 8px !important;
+    padding-left: 8px !important;
+}
+
+.handle-left {
+    color: black;
+    float: left;
+    text-align: left;
+    cursor: grab;
+}
+
+.heRo-card-grey {
+    width: 100%;
+    background-color: #dedede !important;
+    margin-top: 15px;
+    margin-bottom: 15px;
+    margin-left: 5px;
+    margin-right: 5px;
+    padding: 0px !important;
+}
+
+.heRo-card-grey-content {
+    border: 1px solid #cccccc;
+}
+
+.heRo-card-list {
+    width: 100%;
+    min-height: 50px;
+}
+
+@media (max-width: 1000px) {
+    .heRo-card-list {
+        width: 100%;
+    }
+    .heRo-desktop-view {
+        display: none !important
+    }
+    .heRo-card {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 5px;
+        margin-right: 5px;
+        padding: 0px !important;
+    }
+}
+
+@media (min-width: 1001px) {
+    .heRo-card-list {
+        width: 100%;
+    }
+    .heRo-mobile-view {
+        display: none !important;
+    }
+    .heRo-card {
+        margin-top: 15px;
+        margin-bottom: 15px;
+        margin-left: 10px;
+        margin-right: 10px;
+        padding: 0px !important;
+    }
+}

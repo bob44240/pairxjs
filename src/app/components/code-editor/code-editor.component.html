@@ -1,0 +1,54 @@
+
+<div class="page">
+  <div class="model-editor-tab mat-elevation-z6">
+    <span>Code Editor</span>
+  </div>
+
+  <div class="page-container">
+
+    <div class="selection-container mat-elevation-z3 z-15">
+
+      <div class="add-new-container">
+        <button md-button class="button-add-new" (click)="newFile()">
+          <md-icon>add</md-icon>
+          Add File
+        </button>
+      </div>
+
+      <div>
+        <ul>
+          <li class="table-row" *ngFor="let file of files; let i = index" [ngClass]="{'file-active': activeIndex === i}">
+            <div>
+              <span class="filename" (click)="selectFile(i)">{{file.name + '.r'}}</span>
+            </div>
+            <div class="actions">
+              <div class="toolbar-button" (click)="deleteScript(file)">
+                <md-icon>delete</md-icon>
+              </div>
+              <div class="toolbar-button" (click)="renameScript(file)">
+                <md-icon>edit</md-icon>
+              </div>
+            </div>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <div class="code-container" [style.visibility]="activeIndex >= files.length ? 'hidden' : 'visible'">
+
+      <!-- Code Editor Begins -->
+      <div class="code-editor mat-elevation-z1">
+        <div #editorElement class="code-editor">
+        </div>
+      </div>
+
+      <!-- Code Preview Begins -->
+      <div class="code-preview">
+        <span class="muted">Code Preview</span>
+        <iframe [srcdoc]="testHTML" frameBorder="0"></iframe>
+      </div>
+
+    </div>
+
+  </div>
+</div>

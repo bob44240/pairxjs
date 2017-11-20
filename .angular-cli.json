@@ -1,0 +1,81 @@
+{
+    "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
+    "project": {
+        "name": "hero3-model-maker"
+    },
+    "apps": [{
+        "root": "src",
+        "outDir": "dist",
+        "assets": [
+            "assets",
+            "data",
+            "favicon.ico"
+        ],
+        "index": "index.html",
+        "main": "main.ts",
+        "polyfills": "polyfills.ts",
+        "test": "test.ts",
+        "tsconfig": "tsconfig.app.json",
+        "testTsconfig": "tsconfig.spec.json",
+        "prefix": "app",
+        "styles": [
+            "styles/global.scss",
+            "styles/main.css",
+            "styles/tabs.css",
+            "styles/grid.css",
+            "styles/ag-grid.css",
+            "styles/r.css",
+            "styles/inputs.css",
+            "styles/cards.css",
+            "styles/sidenav.css",
+            "styles/sidenav.scss",
+            "styles/components/_formula.scss",
+            "styles/hack.css",
+            "styles/handsontable.css",
+            "styles/clean.css",
+            "styles/prettify.css"
+        ],
+        "scripts": [
+            "../node_modules/jquery/dist/jquery.min.js",
+            "../node_modules/opencpu-browser/opencpu.js",
+            "app/ace/src/ace.js",
+            "app/ace/src/mode-r.js",
+            "app/ace/src/mode-markdown.js",
+            "app/ace/src/mode-hero.js",
+            "app/ace/src/theme-chrome.js",
+            "app/scripts/prettify.js"
+        ],
+        "environmentSource": "environments/environment.ts",
+        "environments": {
+            "dev": "environments/environment.ts",
+            "prod": "environments/environment.prod.ts"
+        }
+    }],
+    "e2e": {
+        "protractor": {
+            "config": "./protractor.conf.js"
+        }
+    },
+    "lint": [{
+            "project": "src/tsconfig.app.json"
+        },
+        {
+            "project": "src/tsconfig.spec.json"
+        },
+        {
+            "project": "e2e/tsconfig.e2e.json"
+        }
+    ],
+    "test": {
+        "karma": {
+            "config": "./karma.conf.js"
+        }
+    },
+    "defaults": {
+        "styleExt": "scss",
+        "component": {},
+        "serve": {
+            "port": 4200
+        }
+    }
+}

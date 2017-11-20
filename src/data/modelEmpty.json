@@ -1,0 +1,41 @@
+{
+  "statestatus": {
+    "isDirty": false
+  },
+  "modelheader": {
+    "filename": "emptyModel.json",
+    "author": "Jordan Amdahl",
+    "description": "This is an empty model template.",
+    "creatDate": "11/30/2017",
+    "updateDate": "11/30/2017"
+  },
+  "decision": {
+    "ModelType": "how"
+  },
+  "settings": {
+    "Country": "United States",
+    "Language": "english",
+    "DiscountRateOutcomes": 3,
+    "DiscountRateCosts": 5,
+    "ModelTimeframe": 20,
+    "ModelTimeframeUnits": "years",
+    "CycleLength": 1,
+    "CycleLengthUnits": "months",
+    "CycleCount": 0
+  },
+  "groupinfo": {
+    "PopulationType": "heterogeneous"
+  },
+  "groups": [],
+  "strategieswho": [],
+  "strategieshow": [],
+  "transitions": [],
+  "states": [],
+  "formulas": [],
+  "values_health": [],
+  "values_economic": [],
+  "summaries_health": [],
+  "summaries_economic": [],
+  "tables": [],
+  "scripts": []
+}
